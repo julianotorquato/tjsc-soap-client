@@ -1,0 +1,31 @@
+<nsS:messageSelos xmlns:nsS="http://www.tjsc.jus.br/selo/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.tjsc.jus.br/selo/XMLSchema xsSeloDigital.xsd">
+    <messageID>0</messageID>
+    <messageDate>2001-12-17T09:30:47.0Z</messageDate>
+    <codigoServentia>0</codigoServentia>
+    <selos>
+        <selo>
+            <tipoSelo>0</tipoSelo>
+            <numeroSerie>AAA00001</numeroSerie>
+            <valorSelo>1.12</valorSelo>
+            <validador>AAAA</validador>
+        </selo>
+        <selo>
+            <tipoSelo>0</tipoSelo>
+            <numeroSerie>AAA00002</numeroSerie>
+            <valorSelo>1.12</valorSelo>
+            <validador>AAAA</validador>
+        </selo>
+        <selo>
+            <tipoSelo>0</tipoSelo>
+            <numeroSerie>AAA00003</numeroSerie>
+            <valorSelo>1.12</valorSelo>
+            <validador>AAAA</validador>
+        </selo>
+        <selo>
+            <tipoSelo>0</tipoSelo>
+            <numeroSerie>AAA00004</numeroSerie>
+            <valorSelo>1.12</valorSelo>
+            <validador>AAAA</validador>
+        </selo>
+    </selos>
+</nsS:messageSelos>

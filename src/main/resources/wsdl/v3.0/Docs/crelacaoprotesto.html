@@ -1,0 +1,239 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item CRelacaoProtesto in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'crelacaoprotesto');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>CRelacaoProtesto</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Type:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="ato.html">Ato</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xscrelacaoprotesto_xsd.html">xsCRelacaoProtesto.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="289,1129,548,1184" href="devedor1.html" alt="Drilldown into devedor"></area>
+                     <area shape="rect" coords="271,1077,529,1122" href="certidao10.html" alt="Drilldown into certidao"></area>
+                     <area shape="rect" coords="309,949,602,1024" href="recibo.html" alt="Drilldown into recibo"></area>
+                     <area shape="rect" coords="291,816,590,942" href="responsavel.html" alt="Drilldown into responsavel"></area>
+                     <area shape="rect" coords="291,673,593,809" href="tipocobranca.html" alt="Drilldown into tipoCobranca"></area>
+                     <area shape="rect" coords="291,535,596,665" href="valorato.html" alt="Drilldown into valorAto"></area>
+                     <area shape="rect" coords="291,377,594,528" href="valoremolumento.html" alt="Drilldown into valorEmolumento"></area>
+                     <area shape="rect" coords="291,193,593,369" href="tipoato.html" alt="Drilldown into tipoAto"></area>
+                     <area shape="rect" coords="291,141,492,185" href="datasolicitacaoato.html" alt="Drilldown into dataSolicitacaoAto"></area>
+                     <area shape="rect" coords="291,89,537,134" href="dataato.html" alt="Drilldown into dataAto"></area>
+                     <area shape="rect" coords="291,27,564,82" href="idato.html" alt="Drilldown into idAto"></area>
+                     <area shape="rect" coords="226,2,615,1071" href="ato.html" alt="Drilldown into Ato"></area></map><img src="images/crelacaoprotesto.png" border="0" alt="XSD Diagram of CRelacaoProtesto" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="CRelacaoProtesto" mixed="false"&gt;
+    &lt;xs:complexContent mixed="false"&gt;
+        &lt;xs:extension base="nsS:Ato"&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="certidao" type="nsS:Certidao"&gt;
+                    &lt;xs:annotation&gt;
+                        &lt;xs:documentation&gt;Campo destinado às informações pertinentes a uma certidão.&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                &lt;/xs:element&gt;
+                &lt;xs:element name="devedor" maxOccurs="unbounded"&gt;
+                    &lt;xs:annotation&gt;
+                        &lt;xs:documentation&gt;Cada um dos devedores relacionados na certidão (podem ser 
+							informados vários elementos “devedor” em cada certidão).&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                    &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                            &lt;xs:element name="documentoDevedor" type="nsS:Documento"&gt;
+                                &lt;xs:annotation&gt;
+                                    &lt;xs:documentation&gt;Preencher  o “tipo de documento” conforme manual 
+										de tabelas padronizadas, item 2.21, “número do documento”, 
+										“órgão emissor” e “data de emissão”.&lt;/xs:documentation&gt;
+                                &lt;/xs:annotation&gt;
+                            &lt;/xs:element&gt;
+                            &lt;xs:element name="selo" type="nsS:SeloAto"&gt;
+                                &lt;xs:annotation&gt;
+                                    &lt;xs:documentation&gt;Cada selo associado a um devedor, como exige o 
+										Código de Normas da Corregedoria-Geral da Justiça de Santa Catarina.&lt;/xs:documentation&gt;
+                                &lt;/xs:annotation&gt;
+                            &lt;/xs:element&gt;
+                            &lt;xs:element name="protesto" maxOccurs="unbounded"&gt;
+                                &lt;xs:annotation&gt;
+                                    &lt;xs:documentation&gt;Cada um dos títulos protestados em relação a um devedor.&lt;/xs:documentation&gt;
+                                &lt;/xs:annotation&gt;
+                                &lt;xs:complexType&gt;
+                                    &lt;xs:sequence&gt;
+                                        &lt;xs:element name="protocolo" type="nsS:Protocolo" /&gt;
+                                        &lt;xs:element name="cancelamento" type="xs:boolean"&gt;
+                                            &lt;xs:annotation&gt;
+                                                &lt;xs:documentation&gt;Indica se este protesto foi cancelado.&lt;/xs:documentation&gt;
+                                            &lt;/xs:annotation&gt;
+                                        &lt;/xs:element&gt;
+                                        &lt;xs:element name="dataCancelamento" type="xs:date" minOccurs="0"&gt;
+                                            &lt;xs:annotation&gt;
+                                                &lt;xs:documentation&gt;Data do cancelamento caso o protesto 
+													tenha sido cancelado.&lt;/xs:documentation&gt;
+                                            &lt;/xs:annotation&gt;
+                                        &lt;/xs:element&gt;
+                                    &lt;/xs:sequence&gt;
+                                &lt;/xs:complexType&gt;
+                            &lt;/xs:element&gt;
+                        &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">idAto</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="idato.html">idAto</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dataAto</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="dataato.html">dataAto</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dataSolicitacaoAto</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="datasolicitacaoato.html">dataSolicitacaoAto</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tipoAto</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tipoato.html">tipoAto</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">valorEmolumento</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="valoremolumento.html">valorEmolumento</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">valorAto</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="valorato.html">valorAto</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tipoCobranca</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tipocobranca.html">tipoCobranca</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">responsavel</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="responsavel.html">responsavel</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">recibo</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="recibo.html">recibo</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">certidao</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="certidao10.html">certidao</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">devedor</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="devedor1.html">devedor</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="ato.html">Ato</a><ul>
+                     <li><b><i>CRelacaoProtesto</i></b></li></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

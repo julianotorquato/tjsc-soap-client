@@ -1,0 +1,151 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item advogadoAssistente in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Element', 'advogadoassistente');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>Element</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>advogadoAssistente</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xseinventariopartilha_xsd.html">xsEInventarioPartilha.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>MinOccurs</b></td>
+               <td>(1)</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>MaxOccurs</b></td>
+               <td>(1)</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Neste campo, devem ser preenchidas 
+obrigatoriamente as informações do advogado assistente 
+de cada um dos herdeiros (podem ser advogados distintos 
+para cada um dos herdeiros).</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="317,115,533,180" href="assistenciajudiciaria1.html" alt="Drilldown into assistenciaJudiciaria"></area>
+                     <area shape="rect" coords="317,52,479,107" href="numerooab1.html" alt="Drilldown into numeroOAB"></area>
+                     <area shape="rect" coords="317,1,466,45" href="advogado2.html" alt="Drilldown into advogado"></area></map><img src="images/advogadoassistente.png" border="0" alt="XSD Diagram of advogadoAssistente" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:element name="advogadoAssistente"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Neste campo, devem ser preenchidas 
+                            					obrigatoriamente as informações do advogado assistente 
+                            					de cada um dos herdeiros (podem ser advogados distintos 
+                            					para cada um dos herdeiros).&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="advogado" type="nsS:Pessoa"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Informações do advogado.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="numeroOAB" type="xs:int"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Número do registro do advogado 
+								                            na Ordem dos Advogados do Brasil.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="assistenciaJudiciaria" type="xs:boolean"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt; Campo em que se espera a resposta 
+								                            à pergunta “o herdeiro é beneficiário da assistência 
+								                            judiciária gratuita?” (sim ou não).&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">advogado</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="advogado2.html">advogado</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">numeroOAB</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="numerooab1.html">numeroOAB</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">assistenciaJudiciaria</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="assistenciajudiciaria1.html">assistenciaJudiciaria</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

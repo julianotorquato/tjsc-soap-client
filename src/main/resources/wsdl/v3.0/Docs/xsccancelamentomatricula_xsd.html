@@ -1,0 +1,82 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs the schema xsCCancelamentoMatricula.xsd in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'xsccancelamentomatricula_xsd');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>xsCCancelamentoMatricula.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;xs:schema xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations" xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" xmlns:nsS="http://www.tjsc.jus.br/selo/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tjsc.jus.br/selo/XMLSchema" jaxb:extensionBindingPrefixes="hj orm" jaxb:version="2.1"&gt;
+	&lt;xs:include schemaLocation="../Comum/xsComum.xsd"/&gt;
+	&lt;xs:complexType name="CCancelamentoMatricula" mixed="false"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Ato destinado a contemplar as informações por ocasião da determinação 
+			judicial de cancelamento de matrícula, ou outro tipo de cancelamento que não se trate do 
+			encerramento legal/regimental de uma matrícula (para o qual existe o ato Certidão de 
+			Encerramento de Matrícula).&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:complexContent mixed="false"&gt;			
+			&lt;xs:extension base="nsS:AtoSelado"&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:element name="certidaoRI" type="nsS:CertidaoRI"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo destinado às informações da certidão específica 
+                            do registro de imóveis.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;				
+				&lt;/xs:sequence&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="ccancelamentomatricula.html">CCancelamentoMatricula</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

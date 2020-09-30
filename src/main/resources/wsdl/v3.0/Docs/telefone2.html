@@ -1,0 +1,169 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item Telefone in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'telefone2');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>Telefone</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xspessoa_xsd.html">xsPessoa.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Telefone define o conjunto de elementos que compõem um número de telefone.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="366,120,512,179" href="numero2.html" alt="Drilldown into numero"></area>
+                     <area shape="rect" coords="366,53,512,112" href="ddd.html" alt="Drilldown into ddd"></area>
+                     <area shape="rect" coords="366,1,627,46" href="tipotelefone.html" alt="Drilldown into tipoTelefone"></area></map><img src="images/telefone2.png" border="0" alt="XSD Diagram of Telefone" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="Telefone"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Telefone define o conjunto de elementos que compõem um número de telefone.&lt;/xs:documentation&gt;
+        &lt;xs:appinfo&gt;
+            &lt;hj:entity xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"&gt;
+                &lt;orm:sequence-generator name="Generator_TELEFONE" sequence-name="SEQ_TELEFONE" xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" /&gt;
+            &lt;/hj:entity&gt;
+        &lt;/xs:appinfo&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="tipoTelefone" type="xs:int"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código do tipo de telefone, conforme tabela padronizada 3.29.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="ddd" type="nsS:string255"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código de DDD do telefone.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="numero" type="nsS:string255"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Número do telefone.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tipoTelefone</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tipotelefone.html">tipoTelefone</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">ddd</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="ddd.html">ddd</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">numero</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="numero2.html">numero</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>Telefone</i></b></li>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="telefone.html">telefone</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="telefone1.html">telefone</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="telefone.html">telefone</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="telefone1.html">telefone</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

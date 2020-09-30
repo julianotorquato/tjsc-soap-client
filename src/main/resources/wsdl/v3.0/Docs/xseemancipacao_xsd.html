@@ -1,0 +1,94 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs the schema xsEEmancipacao.xsd in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'xseemancipacao_xsd');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>xsEEmancipacao.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;xs:schema xmlns:nsS="http://www.tjsc.jus.br/selo/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tjsc.jus.br/selo/XMLSchema"&gt;
+	&lt;xs:include schemaLocation="../Comum/xsComum.xsd"/&gt;
+	&lt;xs:complexType name="EEmancipacao" mixed="false"&gt;
+		&lt;xs:complexContent mixed="false"&gt;
+			&lt;xs:extension base="nsS:AtoSelado"&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:element name="escritura" type="nsS:Escritura"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo destinado às informações da escritura.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+					&lt;!-- ALTERADO 3.0: adicionado --&gt;
+					&lt;xs:element name="filiacao" type="nsS:ParteEscritura" minOccurs="1" maxOccurs="unbounded"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Neste campo deve-se informar o parentesco do emancipado. 
+                            Devem ser informados tantos quantos existirem – pelo menos um é obrigatório.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;					
+					&lt;xs:element name="tutor" type="nsS:ParteEscritura" minOccurs="0"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo obrigatório apenas quando o emancipando possuir 
+                            tutor. Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+					&lt;xs:element name="emancipado" type="nsS:ParteEscritura"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo obrigatório em que se exigem as informações 
+                            completas do emancipado.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+				&lt;/xs:sequence&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="eemancipacao.html">EEmancipacao</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

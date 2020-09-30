@@ -1,0 +1,270 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item Endereco in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'endereco1');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>Endereco</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xspessoa_xsd.html">xsPessoa.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Endereço define o conjunto de elementos que compõem um endereço.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="525,657,742,702" href="pais.html" alt="Drilldown into pais"></area>
+                     <area shape="rect" coords="525,606,703,650" href="cidadeexterior.html" alt="Drilldown into cidadeExterior"></area>
+                     <area shape="rect" coords="518,538,717,598" href="cep.html" alt="Drilldown into cep"></area>
+                     <area shape="rect" coords="518,372,660,531" href="uf.html" alt="Drilldown into uf"></area>
+                     <area shape="rect" coords="518,320,744,365" href="cidade.html" alt="Drilldown into cidade"></area>
+                     <area shape="rect" coords="387,253,560,312" href="complemento.html" alt="Drilldown into complemento"></area>
+                     <area shape="rect" coords="367,186,513,245" href="bairro.html" alt="Drilldown into bairro"></area>
+                     <area shape="rect" coords="367,120,513,179" href="numero1.html" alt="Drilldown into numero"></area>
+                     <area shape="rect" coords="367,53,583,112" href="descricaologradouro.html" alt="Drilldown into descricaoLogradouro"></area>
+                     <area shape="rect" coords="387,1,654,46" href="tipoendereco.html" alt="Drilldown into tipoEndereco"></area></map><img src="images/endereco1.png" border="0" alt="XSD Diagram of Endereco" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="Endereco"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Endereço define o conjunto de elementos que compõem um endereço.&lt;/xs:documentation&gt;
+        &lt;xs:appinfo&gt;
+            &lt;hj:entity xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"&gt;
+                &lt;orm:sequence-generator name="Generator_ENDERECO" sequence-name="SEQ_ENDERECO" xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" /&gt;
+            &lt;/hj:entity&gt;
+        &lt;/xs:appinfo&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="tipoEndereco" type="xs:int" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código do tipo de endereço, conforme tabela padronizada 3.23.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="descricaoLogradouro" type="nsS:string255"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Descrição do logradouro.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="numero" type="nsS:string255"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Número do endereço.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="bairro" type="nsS:string255"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Bairro do endereço.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="complemento" type="nsS:string255" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Complemento do endereço.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:choice&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Endereço no Brasil.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:element name="cidade" type="xs:int"&gt;
+                    &lt;xs:annotation&gt;
+                        &lt;xs:documentation&gt;Código da cidade, conforme tabela padronizada 3.15.&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                &lt;/xs:element&gt;
+                &lt;xs:element name="uf" type="nsS:UF"&gt;
+                    &lt;xs:annotation&gt;
+                        &lt;xs:documentation&gt;Sigla da Unidade da Federação.&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                &lt;/xs:element&gt;
+                &lt;xs:element name="cep" type="nsS:string255"&gt;
+                    &lt;xs:annotation&gt;
+                        &lt;xs:documentation&gt;Código de endereçamento postal do endereço.&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Endereço no exterior.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:element name="cidadeExterior" type="nsS:string255" /&gt;
+                &lt;xs:element name="pais" type="xs:int"&gt;
+                    &lt;xs:annotation&gt;
+                        &lt;xs:documentation&gt;Código do país, conforme tabela padronizada 3.16.&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:choice&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tipoEndereco</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tipoendereco.html">tipoEndereco</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">descricaoLogradouro</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="descricaologradouro.html">descricaoLogradouro</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">numero</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="numero1.html">numero</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">bairro</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="bairro.html">bairro</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">complemento</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="complemento.html">complemento</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">cidade</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="cidade.html">cidade</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">uf</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="uf.html">uf</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">cep</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="cep.html">cep</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">cidadeExterior</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="cidadeexterior.html">cidadeExterior</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">pais</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="pais.html">pais</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>Endereco</i></b></li>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="enderecoassinatura.html">enderecoAssinatura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="endereco.html">endereco</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="endereco2.html">endereco</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="endereco3.html">endereco</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="localobito.html">localObito</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="endereco.html">endereco</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="endereco2.html">endereco</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="endereco3.html">endereco</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="enderecoassinatura.html">enderecoAssinatura</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="localobito.html">localObito</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

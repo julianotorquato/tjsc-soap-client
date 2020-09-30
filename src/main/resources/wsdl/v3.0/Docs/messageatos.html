@@ -1,0 +1,196 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item messageAtos in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Element', 'messageatos');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>Element</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>messageAtos</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xsatos_xsd.html">xsAtos.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Conjunto dos atos sendo transmitidos.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="256,240,404,265" href="signature.html" alt="Drilldown into Signature"></area>
+                     <area shape="rect" coords="236,208,321,233" href="atos.html" alt="Drilldown into atos"></area>
+                     <area shape="rect" coords="256,156,440,200" href="codigoserventia.html" alt="Drilldown into codigoServentia"></area>
+                     <area shape="rect" coords="236,104,408,148" href="messagedate.html" alt="Drilldown into messageDate"></area>
+                     <area shape="rect" coords="236,52,477,97" href="messageid.html" alt="Drilldown into messageID"></area>
+                     <area shape="rect" coords="191,1,333,45" href="version.html" alt="Drilldown into version"></area></map><img src="images/messageatos.png" border="0" alt="XSD Diagram of messageAtos" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:element name="messageAtos"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Conjunto dos atos sendo transmitidos.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:appinfo&gt;
+                &lt;hj:entity xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"&gt;
+                    &lt;orm:sequence-generator name="Generator_MESSAGEATOS" sequence-name="SEQ_MESSAGEATOS" xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" /&gt;
+                &lt;/hj:entity&gt;
+            &lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="messageID" type="xs:int"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código sequencial do arquivo para controle da Serventia.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="messageDate" type="xs:dateTime"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Data/Hora da geração do arquivo.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="codigoServentia" type="xs:int" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código da Serventia.&lt;/xs:documentation&gt;
+                    &lt;xs:appinfo&gt;Tabela Padronizada: 3.2 - Cartórios&lt;/xs:appinfo&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="atos"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="ato" type="nsS:Ato" maxOccurs="unbounded"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Cada um dos diversos atos sendo transmitidos.&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="Signature" type="xs:anyType" minOccurs="0" /&gt;
+        &lt;/xs:sequence&gt;
+        &lt;xs:attribute name="version" type="xs:string" use="required" fixed="3.0" /&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">messageID</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="messageid.html">messageID</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">messageDate</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="messagedate.html">messageDate</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">codigoServentia</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="codigoserventia.html">codigoServentia</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">atos</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="atos.html">atos</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">Signature</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="signature.html">Signature</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childAttributes" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Attributes:</b></td>
+            </tr>
+            <tr id="childAttributes_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Default Value</td>
+                        <td class="last">Use</td>
+                     </tr>
+                     <tr>
+                        <td class="first">version</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="version.html">version</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

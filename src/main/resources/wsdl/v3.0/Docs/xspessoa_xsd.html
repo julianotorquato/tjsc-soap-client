@@ -1,0 +1,384 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs the schema xsPessoa.xsd in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'xspessoa_xsd');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>xsPessoa.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;xs:schema targetNamespace="http://www.tjsc.jus.br/selo/XMLSchema"	 
+	xmlns:nsS="http://www.tjsc.jus.br/selo/XMLSchema"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"	 
+	xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"	 
+	xmlns:orm="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	jaxb:extensionBindingPrefixes="hj orm" 
+	jaxb:version="2.1"&gt;  
+	&lt;xs:include schemaLocation="xsSimpleTypes.xsd"/&gt;
+	&lt;xs:complexType name="Pessoa"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Informações completas de uma pessoa.&lt;/xs:documentation&gt;
+			&lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_PESSOA" sequence-name="SEQ_PESSOA"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="nomePessoa" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Nome da pessoa.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="tipoPessoa" type="nsS:TipoPessoa"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Tipo de pessoa. O campo é uma lista enumerada e pode assumir 
+					os seguintes valores: Física, Jurídica.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="estadoCivil" type="xs:int" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código do estado civil, conforme manual de tabelas 
+					padronizadas, item 2.17. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="profissao" type="xs:int" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código da profissão, conforme manual de tabelas 
+					padronizadas, item 2.20. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="nacionalidade" type="xs:int" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código da nacionalidade, conforme manual de tabelas padronizadas
+					item 2.11. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="dataNascimento" type="xs:date" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Data de nascimento da pessoa. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="documento" type="nsS:Documento" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Cada um dos diversos documentos da pessoa.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="endereco" type="nsS:Endereco" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Cada um dos endereços da pessoa.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="telefone" type="nsS:Telefone" minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Cada um dos telefones da pessoa. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="email" type="nsS:Email" minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Cada um dos e-mails da pessoa. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="sexo" type="nsS:sexo"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Sexo biológico da pessoa.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="PessoaResumo"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Informações resumidas de uma pessoa.&lt;/xs:documentation&gt;
+			&lt;xs:appinfo&gt;			
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_PESSOARESUMO" sequence-name="SEQ_PESSOARESUMO"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="nomePessoa" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Nome da pessoa.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="tipoPessoa" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Tipo de pessoa. O campo é uma lista enumerada e pode assumir 
+					os seguintes valores: Física, Jurídica.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="estadoCivil" type="xs:int" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código do estado civil, conforme manual de tabelas padronizadas
+					item 2.17. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="profissao" type="xs:int" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código da profissão, conforme manual de tabelas padronizadas
+					item 2.20. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="nacionalidade" type="xs:int" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código da nacionalidade, conforme manual de tabelas padronizadas
+					item 2.11. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="dataNascimento" type="xs:date" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Data de nascimento da pessoa. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="documento" type="nsS:Documento" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Cada um dos diversos documentos da pessoa.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="endereco" type="nsS:Endereco" minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Cada um dos endereços da pessoa. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="telefone" type="nsS:Telefone" minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Cada um dos telefones da pessoa. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="email" type="nsS:Email" minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Cada um dos e-mails da pessoa. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="sexo" type="nsS:sexo" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Sexo biológico da pessoa. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;	
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;!-- ALTERADO 3.0: adicionado --&gt;
+	&lt;xs:complexType name="PessoaFiliacao"&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="pessoa" type="nsS:Pessoa"&gt;
+				&lt;xs:annotation&gt;
+			    	&lt;xs:documentation&gt;Dados completos da pessoa.&lt;/xs:documentation&gt;
+			    &lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;			
+			&lt;xs:element name="progenitor" type="nsS:string255" minOccurs="1" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Nome do parentesco da filiação. Devem ser informados tantos 
+                	quantos existirem – pelo menos um é obrigatório.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+       		&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Documento"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Documento define o conjunto de elementos que compõem um documento.&lt;/xs:documentation&gt;
+			&lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_DOCUMENTO" sequence-name="SEQ_DOCUMENTO"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="tipoDocumento" type="xs:int"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código do tipo de documento, conforme tabela padronizada 3.21.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="numero" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Número do documento.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="orgaoEmissor" type="nsS:string255" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Órgão emissor do documento.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="dataEmissao" type="xs:date" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Data de emissão do documento.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Telefone"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Telefone define o conjunto de elementos que compõem um número de telefone.&lt;/xs:documentation&gt;
+			&lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_TELEFONE" sequence-name="SEQ_TELEFONE"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="tipoTelefone" type="xs:int"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código do tipo de telefone, conforme tabela padronizada 3.29.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="ddd" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código de DDD do telefone.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="numero" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Número do telefone.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Endereco"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Endereço define o conjunto de elementos que compõem um endereço.&lt;/xs:documentation&gt;
+			&lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_ENDERECO" sequence-name="SEQ_ENDERECO"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="tipoEndereco" type="xs:int" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código do tipo de endereço, conforme tabela padronizada 3.23.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="descricaoLogradouro" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Descrição do logradouro.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="numero" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Número do endereço.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="bairro" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Bairro do endereço.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="complemento" type="nsS:string255" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Complemento do endereço.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:choice&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation&gt;Endereço no Brasil.&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+					&lt;xs:element name="cidade" type="xs:int"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation&gt;Código da cidade, conforme tabela padronizada 3.15.&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:element&gt;
+					&lt;xs:element name="uf" type="nsS:UF"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation&gt;Sigla da Unidade da Federação.&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:element&gt;
+					&lt;xs:element name="cep" type="nsS:string255"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation&gt;Código de endereçamento postal do endereço.&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:element&gt;
+				&lt;/xs:sequence&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation&gt;Endereço no exterior.&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+					&lt;xs:element name="cidadeExterior" type="nsS:string255"/&gt;
+					&lt;xs:element name="pais" type="xs:int"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation&gt;Código do país, conforme tabela padronizada 3.16.&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:element&gt;
+				&lt;/xs:sequence&gt;
+			&lt;/xs:choice&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Email"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;E-mail define o conjunto de elementos que compõem um e-mail.&lt;/xs:documentation&gt;
+			&lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_EMAIL" sequence-name="SEQ_EMAIL"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="tipoEmail" type="xs:int"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Tipo de e-mail, conforme tabela padronizada 3.22.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="enderecoEmail" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Endereço de e-mail.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="documento1.html">Documento</a></li>
+                     <li><a href="email.html">Email</a></li>
+                     <li><a href="endereco1.html">Endereco</a></li>
+                     <li><a href="pessoa1.html">Pessoa</a></li>
+                     <li><a href="pessoafiliacao.html">PessoaFiliacao</a></li>
+                     <li><a href="pessoaresumo.html">PessoaResumo</a></li>
+                     <li><a href="telefone2.html">Telefone</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

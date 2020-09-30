@@ -1,0 +1,163 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item devedor in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Element', 'devedor1');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>Element</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>devedor</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xscrelacaoprotesto_xsd.html">xsCRelacaoProtesto.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>MinOccurs</b></td>
+               <td>(1)</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>MaxOccurs</b></td>
+               <td>unbounded</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Cada um dos devedores relacionados na certidão (podem ser 
+informados vários elementos “devedor” em cada certidão).</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="366,135,615,180" href="protesto2.html" alt="Drilldown into protesto"></area>
+                     <area shape="rect" coords="348,73,649,128" href="selo2.html" alt="Drilldown into selo"></area>
+                     <area shape="rect" coords="348,1,604,66" href="documentodevedor.html" alt="Drilldown into documentoDevedor"></area></map><img src="images/devedor1.png" border="0" alt="XSD Diagram of devedor" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:element name="devedor" maxOccurs="unbounded"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Cada um dos devedores relacionados na certidão (podem ser 
+							informados vários elementos “devedor” em cada certidão).&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="documentoDevedor" type="nsS:Documento"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Preencher  o “tipo de documento” conforme manual 
+										de tabelas padronizadas, item 2.21, “número do documento”, 
+										“órgão emissor” e “data de emissão”.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="selo" type="nsS:SeloAto"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Cada selo associado a um devedor, como exige o 
+										Código de Normas da Corregedoria-Geral da Justiça de Santa Catarina.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="protesto" maxOccurs="unbounded"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Cada um dos títulos protestados em relação a um devedor.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="protocolo" type="nsS:Protocolo" /&gt;
+                        &lt;xs:element name="cancelamento" type="xs:boolean"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Indica se este protesto foi cancelado.&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="dataCancelamento" type="xs:date" minOccurs="0"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Data do cancelamento caso o protesto 
+													tenha sido cancelado.&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">documentoDevedor</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="documentodevedor.html">documentoDevedor</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">selo</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="selo2.html">selo</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">protesto</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="protesto2.html">protesto</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

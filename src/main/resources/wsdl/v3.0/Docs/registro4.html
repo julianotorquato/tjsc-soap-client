@@ -1,0 +1,216 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item Registro in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'registro4');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>Registro</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xscomum_xsd.html">xsComum.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Campo destinado ao conjunto de elementos que identifica o 
+registro de um ato nos livros da serventia.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="322,227,518,272" href="dataregistro.html" alt="Drilldown into dataRegistro"></area>
+                     <area shape="rect" coords="322,160,519,220" href="paginafinal.html" alt="Drilldown into paginaFinal"></area>
+                     <area shape="rect" coords="322,93,521,153" href="paginainicial.html" alt="Drilldown into paginaInicial"></area>
+                     <area shape="rect" coords="322,1,624,86" href="codigolivro.html" alt="Drilldown into codigoLivro"></area></map><img src="images/registro4.png" border="0" alt="XSD Diagram of Registro" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="Registro"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Campo destinado ao conjunto de elementos que identifica o 
+            registro de um ato nos livros da serventia.&lt;/xs:documentation&gt;
+        &lt;xs:appinfo&gt;
+            &lt;hj:entity xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"&gt;
+                &lt;orm:sequence-generator name="Generator_REGISTRO" sequence-name="SEQ_REGISTRO" xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" /&gt;
+            &lt;/hj:entity&gt;
+        &lt;/xs:appinfo&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="codigoLivro" type="xs:int"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código identificador do livro de protesto, conforme manual 
+                    de tabelas padronizadas, item 2.33, oriunda do sistema do cadastro do extrajudicial, 
+                    a partir do cadastramento do livro naquele sistema pelo próprio notário e registrador.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="paginaInicial"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Página do livro onde se inicia o registro do ato.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="nsS:string255"&gt;
+                    &lt;xs:maxLength value="10" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="paginaFinal"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Página do livro onde termina o registro do Ato.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="nsS:string255"&gt;
+                    &lt;xs:maxLength value="10" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="dataRegistro" type="xs:date"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Data em que foi feito o registro do ato no livro.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">codigoLivro</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="codigolivro.html">codigoLivro</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">paginaInicial</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="paginainicial.html">paginaInicial</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">paginaFinal</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="paginafinal.html">paginaFinal</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dataRegistro</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="dataregistro.html">dataRegistro</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>Registro</i></b></li>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro.html">registro</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro2.html">registro</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro3.html">registro</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro5.html">registro</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro6.html">registro</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro7.html">registro</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro8.html">registro</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registroanterior.html">registroAnterior</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registroanterior1.html">registroAnterior</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro.html">registro</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro2.html">registro</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro3.html">registro</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro5.html">registro</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro6.html">registro</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro7.html">registro</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro8.html">registro</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registroanterior.html">registroAnterior</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registroanterior1.html">registroAnterior</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item PessoaResumo in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'pessoaresumo');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>PessoaResumo</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xspessoa_xsd.html">xsPessoa.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Informações resumidas de uma pessoa.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="263,592,420,674" href="sexo1.html" alt="Drilldown into sexo"></area>
+                     <area shape="rect" coords="261,540,445,585" href="email2.html" alt="Drilldown into email"></area>
+                     <area shape="rect" coords="261,488,452,533" href="telefone1.html" alt="Drilldown into telefone"></area>
+                     <area shape="rect" coords="261,436,458,481" href="endereco3.html" alt="Drilldown into endereco"></area>
+                     <area shape="rect" coords="261,384,460,429" href="documento3.html" alt="Drilldown into documento"></area>
+                     <area shape="rect" coords="263,332,446,376" href="datanascimento1.html" alt="Drilldown into dataNascimento"></area>
+                     <area shape="rect" coords="263,269,550,324" href="nacionalidade1.html" alt="Drilldown into nacionalidade"></area>
+                     <area shape="rect" coords="263,207,530,262" href="profissao1.html" alt="Drilldown into profissao"></area>
+                     <area shape="rect" coords="263,145,538,200" href="estadocivil1.html" alt="Drilldown into estadoCivil"></area>
+                     <area shape="rect" coords="243,67,516,137" href="tipopessoa1.html" alt="Drilldown into tipoPessoa"></area>
+                     <area shape="rect" coords="243,1,413,60" href="nomepessoa1.html" alt="Drilldown into nomePessoa"></area></map><img src="images/pessoaresumo.png" border="0" alt="XSD Diagram of PessoaResumo" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="PessoaResumo"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Informações resumidas de uma pessoa.&lt;/xs:documentation&gt;
+        &lt;xs:appinfo&gt;
+            &lt;hj:entity xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"&gt;
+                &lt;orm:sequence-generator name="Generator_PESSOARESUMO" sequence-name="SEQ_PESSOARESUMO" xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" /&gt;
+            &lt;/hj:entity&gt;
+        &lt;/xs:appinfo&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="nomePessoa" type="nsS:string255"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Nome da pessoa.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="tipoPessoa" type="nsS:string255"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Tipo de pessoa. O campo é uma lista enumerada e pode assumir 
+					os seguintes valores: Física, Jurídica.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="estadoCivil" type="xs:int" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código do estado civil, conforme manual de tabelas padronizadas
+					item 2.17. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="profissao" type="xs:int" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código da profissão, conforme manual de tabelas padronizadas
+					item 2.20. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="nacionalidade" type="xs:int" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código da nacionalidade, conforme manual de tabelas padronizadas
+					item 2.11. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="dataNascimento" type="xs:date" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Data de nascimento da pessoa. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="documento" type="nsS:Documento" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Cada um dos diversos documentos da pessoa.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="endereco" type="nsS:Endereco" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Cada um dos endereços da pessoa. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="telefone" type="nsS:Telefone" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Cada um dos telefones da pessoa. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="email" type="nsS:Email" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Cada um dos e-mails da pessoa. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="sexo" type="nsS:sexo" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Sexo biológico da pessoa. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">nomePessoa</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="nomepessoa1.html">nomePessoa</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tipoPessoa</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tipopessoa1.html">tipoPessoa</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">estadoCivil</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="estadocivil1.html">estadoCivil</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">profissao</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="profissao1.html">profissao</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">nacionalidade</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="nacionalidade1.html">nacionalidade</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dataNascimento</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="datanascimento1.html">dataNascimento</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">documento</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="documento3.html">documento</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">endereco</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="endereco3.html">endereco</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">telefone</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="telefone1.html">telefone</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">email</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="email2.html">email</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">sexo</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="sexo1.html">sexo</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>PessoaResumo</i></b></li>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="nomebusca.html">nomeBusca</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="apresentante.html">apresentante</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="solicitante.html">solicitante</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="proprietario.html">proprietario</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="credor.html">credor</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="consultado.html">consultado</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="apresentante.html">apresentante</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="consultado.html">consultado</a><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="credor.html">credor</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="nomebusca.html">nomeBusca</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="proprietario.html">proprietario</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="solicitante.html">solicitante</a>, 
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item Escritura in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'escritura');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>Escritura</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xscomum_xsd.html">xsComum.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Define o conjunto de elementos comuns a todas as escrituras.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="352,1140,611,1195" href="tiporegistroaverbacao.html" alt="Drilldown into tipoRegistroAverbacao"></area>
+                     <area shape="rect" coords="350,986,644,1132" href="tipoatovinculado.html" alt="Drilldown into tipoAtoVinculado"></area>
+                     <area shape="rect" coords="350,883,656,978" href="itbi.html" alt="Drilldown into itbi"></area>
+                     <area shape="rect" coords="332,821,616,876" href="registro3.html" alt="Drilldown into registro"></area>
+                     <area shape="rect" coords="350,668,708,814" href="selovinculadojuridicamente.html" alt="Drilldown into seloVinculadoJuridicamente"></area>
+                     <area shape="rect" coords="350,585,652,660" href="clausulageral.html" alt="Drilldown into clausulaGeral"></area>
+                     <area shape="rect" coords="332,487,608,577" href="valornegocio.html" alt="Drilldown into valorNegocio"></area>
+                     <area shape="rect" coords="350,405,647,480" href="objetonegocio.html" alt="Drilldown into objetoNegocio"></area>
+                     <area shape="rect" coords="350,343,611,398" href="testemunha.html" alt="Drilldown into testemunha"></area>
+                     <area shape="rect" coords="332,280,591,335" href="dispensatestemunha.html" alt="Drilldown into dispensaTestemunha"></area>
+                     <area shape="rect" coords="350,198,636,273" href="intervenientes.html" alt="Drilldown into intervenientes"></area>
+                     <area shape="rect" coords="352,115,646,190" href="enderecoassinatura.html" alt="Drilldown into enderecoAssinatura"></area>
+                     <area shape="rect" coords="332,53,537,108" href="assinadaserventia.html" alt="Drilldown into assinadaServentia"></area>
+                     <area shape="rect" coords="332,1,523,46" href="protocolo1.html" alt="Drilldown into protocolo"></area></map><img src="images/escritura.png" border="0" alt="XSD Diagram of Escritura" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="Escritura"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Define o conjunto de elementos comuns a todas as escrituras.&lt;/xs:documentation&gt;
+        &lt;xs:appinfo&gt;
+            &lt;hj:entity xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"&gt;
+                &lt;orm:sequence-generator name="Generator_ESCRITURA" sequence-name="SEQ_ESCRITURA" xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" /&gt;
+            &lt;/hj:entity&gt;
+        &lt;/xs:appinfo&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="protocolo" type="nsS:Protocolo"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Campo destinado à informação do protocolo.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="assinadaServentia" type="xs:boolean"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Campo em que se espera a resposta à pergunta 
+                    “o ato foi assinado na serventia?” (sim ou não).&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="enderecoAssinatura" type="nsS:Endereco" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando a resposta à pergunta anterior for “não”, deve-se 
+                    preencher este campo com as informações completas do endereço do local da 
+                    assinatura do ato. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="intervenientes" type="nsS:ParteEscritura" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Nesta ocasião, espera-se sejam qualificados todos os intervenientes 
+                    envolvidos na lavratura do ato, à exceção das partes diretamente envolvidas nele 
+                    (como outorgantes e outorgados). Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="dispensaTestemunha" type="xs:boolean"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Campo destinado à resposta da pergunta “houve dispensa de 
+                    testemunhas” (sim ou não).&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="testemunha" type="nsS:Pessoa" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando não houver a dispensa de testemunhas, elas deverão 
+                    ser plenamente qualificadas. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="objetoNegocio" type="nsS:ObjetoNegocio" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando a escritura abordar objeto específico, independentemente 
+                    do tipo de objeto, ele deve ser devidamente qualificado, tantos quantos sejam os 
+                    objetos mencionados. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="valorNegocio"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Somatório do valor dos bens e direitos envolvidos no negócio 
+                    jurídico. Se não for o caso, deve o campo ser preenchido com "0". Campo com
+                    2 casas decimais.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:decimal"&gt;
+                    &lt;xs:fractionDigits value="2" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="clausulaGeral" type="xs:string" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Campo textual livre e ilimitado destinado à inserção do inteiro 
+                    teor da escritura, destinado à correta exibição do ato na consulta pública do 
+                    Selo Digital. Opcional.&lt;/xs:documentation&gt;
+                &lt;xs:appinfo&gt;
+                    &lt;hj:basic xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"&gt;
+                        &lt;orm:lob xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" /&gt;
+                    &lt;/hj:basic&gt;
+                &lt;/xs:appinfo&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;!-- ALTERADO 3.0 : adicionado --&gt;
+        &lt;xs:element name="seloVinculadoJuridicamente" type="nsS:SeloVinculadoJuridicamente" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Campo destinado à informação do número de série de todos os selos 
+					vinculados utilizados no ato, que variam conforme a quantidade de negócios jurídicos 
+					nele envolvidos. Na prática, todo ato consome um selo. Ocorre que nas escrituras, 
+					dependendo do número de negócios jurídicos realizados, são utilizados mais de um selo, 
+					os quais deverão ser inseridos neste campo; São esperados o “numeroserie” no formato 
+					AAA00000 e o “tipoNegocioJuridico” que deve conter o código do negócio jurídico sendo 
+					praticado de acordo com o manual de tabelas padrão item 2.9. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="registro" type="nsS:Registro"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Campo destinado ao conjunto de elementos que identifica o registro 
+					de um ato nos livros da serventia.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="itbi" type="nsS:ImpostosTaxas" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Campo destinado à informação do imposto de transmissão de bens 
+					imóveis. Permite-se a listagem de várias guias de ITBI, tantas quanto forem emitidas. 
+					A precisão destas informações é fundamental para a auditoria do sistema de inspeções 
+					virtuais. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="tipoAtoVinculado" type="xs:int" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Em uma escritura, não é incomum que sejam realizados diversos 
+					negócios jurídicos. O tipo do ato principal já foi listado no elemento “tipoAto”, 
+					que consta da estrutura geral de todos os atos. Os atos vinculados, referentes aos 
+					demais negócios jurídicos realizados, deverão ser listados aqui, tantos quantos 
+					existirem na escritura, ocasião em que se colocará o código do tipo do ato, 
+					fornecido pelo TJSC, conforme manual de tabelas padronizadas, item 2.1. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="tipoRegistroAverbacao" type="xs:int" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código do tipo de de registro/averbação, conforme manual de 
+					tabelas padronizadas item 2.9.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">protocolo</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="protocolo1.html">protocolo</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">assinadaServentia</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="assinadaserventia.html">assinadaServentia</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">enderecoAssinatura</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="enderecoassinatura.html">enderecoAssinatura</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">intervenientes</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="intervenientes.html">intervenientes</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dispensaTestemunha</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="dispensatestemunha.html">dispensaTestemunha</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">testemunha</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="testemunha.html">testemunha</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">objetoNegocio</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="objetonegocio.html">objetoNegocio</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">valorNegocio</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="valornegocio.html">valorNegocio</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">clausulaGeral</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="clausulageral.html">clausulaGeral</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">seloVinculadoJuridicamente</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="selovinculadojuridicamente.html">seloVinculadoJuridicamente</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">registro</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="registro3.html">registro</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">itbi</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="itbi.html">itbi</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tipoAtoVinculado</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tipoatovinculado.html">tipoAtoVinculado</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tipoRegistroAverbacao</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tiporegistroaverbacao.html">tipoRegistroAverbacao</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>Escritura</i></b></li>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura1.html">escritura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura2.html">escritura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura3.html">escritura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura4.html">escritura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura5.html">escritura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura6.html">escritura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura7.html">escritura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura8.html">escritura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura9.html">escritura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura10.html">escritura</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura11.html">escritura</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura1.html">escritura</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura10.html">escritura</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura11.html">escritura</a><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura2.html">escritura</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura3.html">escritura</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura4.html">escritura</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura5.html">escritura</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura6.html">escritura</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura7.html">escritura</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura8.html">escritura</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="escritura9.html">escritura</a>, 
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

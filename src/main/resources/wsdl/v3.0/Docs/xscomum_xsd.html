@@ -1,0 +1,1457 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs the schema xsComum.xsd in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'xscomum_xsd');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>xsComum.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;xs:schema targetNamespace="http://www.tjsc.jus.br/selo/XMLSchema"	 
+	xmlns:nsS="http://www.tjsc.jus.br/selo/XMLSchema"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"	 
+	xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"	 
+	xmlns:orm="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	jaxb:extensionBindingPrefixes="hj orm" 
+	jaxb:version="2.1"&gt;           
+    &lt;xs:include schemaLocation="xsPessoa.xsd" /&gt;
+    &lt;xs:include schemaLocation="xsTituloCredito.xsd" /&gt;
+    &lt;xs:complexType name="Advogado"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Define o papel de advogado.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="advogado" type="nsS:Pessoa" /&gt;
+            &lt;xs:element name="numeroOAB" type="xs:int" /&gt;
+            &lt;xs:element name="assistenciaJudiciaria" type="xs:boolean" /&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="ApontamentoProtesto"&gt;
+        &lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Define o conjunto de elementos que devem constar quando é feito o 
+			apontamento de protesto.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_APONTAMENTOPROTESTO" sequence-name="SEQ_APONTAMENTOPROTESTO" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="protocolo" type="nsS:Protocolo"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo destinado à informação do protocolo.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="motivoProtesto" type="xs:int"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código do motivo do protesto,  conforme manual de tabelas 
+                    padronizadas, item 2.4.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="fimFalimentar" type="xs:boolean"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo destinado à resposta da pergunta “o protesto é para 
+                    fim falimentar?” (sim ou não).&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="correcaoMonetaria" minOccurs="0"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Valor numérico da correção monetária, quando houver. Campo
+                    com 2 casas dedimais. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;            
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="jurosCompensatorios" minOccurs="0"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Valor numérico dos juros compensatórios, quando houver. Campo
+                    com 2 casas decimais. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="apresentante" type="nsS:PessoaResumo"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Informações do apresentante. Esperam-se os seguintes dados: 
+                    "nome da pessoa", "tipo da pessoa" e "documento".&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;            
+            &lt;xs:element name="tituloCredito" type="nsS:TituloCredito"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Informações do título sendo protestado.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType abstract="true" name="Ato" &gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Ato define o conjunto padrão de elementos para todos os atos.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_ATO" sequence-name="SEQ_ATO"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="idAto" type="xs:int"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código identificador do ato, de uso interno, fornecido pelo próprio 
+                    sistema informatizado utilizado na serventia.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;            
+            &lt;xs:element name="dataAto" type="xs:dateTime"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Data e hora em que o ato foi lavrado (registrado e selado).&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="dataSolicitacaoAto" type="xs:dateTime"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Data e hora em que o serviço foi solicitado.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;            
+            &lt;xs:element name="tipoAto" type="xs:int"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código do tipo do ato, fornecido pelo TJSC, conforme manual de 
+                    tabelas padronizadas, item 2.1. Informação importante para a correta individualização 
+                    do ato para a exibição e consulta pública. Fundamental também para a correta operação 
+                    do sistema do ressarcimento eletrônico, ferramenta que utiliza as informações do tipo 
+                    de cobrança, tipo do ato e solicitante para proceder ao ressarcimento de maneira 
+                    automatizada. Caso o tipo de ato seja informado de maneira incorreta, não apenas a 
+                    exibição do ato no portal de consulta, mas também o processamento do ato no sistema 
+                    eletrônico de ressarcimento, serão severamente afetados.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="valorEmolumento"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Valor dos emolumentos cobrados no ato. Salienta-se que, nesse campo, 
+                    deve ser informado o valor dos emolumentos exatamente conforme previsto na tabela 
+                    respectiva no Regimento de Emolumentos do Estado de Santa Catarina. Portanto, não se 
+                    deve incluir valores diversos, como, por exemplo, digitalização, microfilmagem, 
+                    intimações etc. Em resumo, trata-se do valor ‘puro’ dos emolumentos daquele ato 
+                    individualmente considerado.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="valorAto"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Valor total do ato, resultado da soma de todos os campos que refiram 
+                    valores e que se encontrem presentes na estrutura do ato enviado, como emolumentos, 
+                    selo de fiscalização, diligências, condução etc. O valor referente ao recibo NÃO deve 
+                    ser somado no campo ‘valorAto’, pois pode referir-se a mais de um serviço demandado 
+                    pela parte e não necessariamente vinculado àquele ato específico.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="tipoCobranca" type="xs:int"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Tipo de cobrança, conforme manual de tabelas padronizadas, item 2.2. 
+                    Informação fundamental também para a correta operação do sistema do ressarcimento 
+                    eletrônico, ferramenta que utiliza as informações do tipo de cobrança, tipo do ato 
+                    e solicitante para proceder ao ressarcimento de maneira automatizada. Informações 
+                    incorretas, nesse campo, acabarão por inviabilizar o recebimento do ressarcimento 
+                    pela Corregedoria-Geral da Justiça.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="responsavel" type="xs:int"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código do colaborador responsável pelo registro do ato, conforme 
+                    manual de tabelas padronizadas, item 2.34. O sistema informatizado da serventia 
+                    deverá consumir tabela padrão oriunda do sistema do cadastro do extrajudicial, 
+                    preenchido pelo próprio notário e registrador. Cada serventia terá a sua tabela 
+                    padrão individual, obtida no serviço do Selo Digital, por meio do “codigoServentia”.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="recibo" type="nsS:Recibo" minOccurs="0" maxOccurs="unbounded"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo destinado aos dados do recibo. Podem ser relacionados um 
+                    ou mais recibos. Trata-se de campo não obrigatório, todavia esperado para a 
+                    completude da análise dos atos. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType abstract="true" name="AtoSelado" mixed="false"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Ato Selado define o conjunto padrão de elementos para todos os 
+            atos que recebem selo de fiscalização.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_ATOSELADO" sequence-name="SEQ_ATOSELADO"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:complexContent mixed="false"&gt;
+            &lt;xs:extension base="nsS:Ato"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="selo" type="nsS:SeloAto"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo destinado à identificação de um selo de fiscalização.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="retificador" type="xs:boolean"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Neste campo, espera-se a resposta à pergunta “O presente ato 
+                            é retificador?” (sim ou não). Ver aplicações do ato retificador no FAQ do 
+                            Selo Digital.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="numeroSerieSeloOriginal" type="nsS:SerieSelo" minOccurs="0"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Caso se trate de ato retificador, deve ser informado nesse 
+                            campo o número de série do selo digital empregado no ato retificado, no 
+                            padrão AAA00000. Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;!-- ALTERADO 3.0 : alterado tipo para validacao --&gt;
+                    &lt;xs:element name="recolhimentoFRJ" type="nsS:ImpostosTaxasMascaraBoleto" minOccurs="0" maxOccurs="unbounded"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Informações de cobrança do Fundo de Reaparelhamento da Justiça, 
+                            quando houver. Nesta ocasião, devem ser informados o “nome do imposto” (no caso, 
+                            “Fundo de Reaparelhamento da Justiça – FRJ”), “número do documento” (número do 
+                            comprovante de pagamento), “data do pagamento” e “valor pago”. O número do 
+                            documento aceito aqui é o “nossonumero” de um boleto bancário emitido pelo PJSC. 
+                            A precisão destas informações é fundamental para a auditoria do Fundo de 
+                            Reaparelhamento da Justiça. Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;                       					
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="solicitante" type="nsS:PessoaResumo" minOccurs="0"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Neste campo, esperam-se as informações do solicitante. 
+                            O sistema de ressarcimento utiliza as informações do tipo 
+                            de cobrança, tipo do ato e solicitante para proceder ao ressarcimento de 
+                            maneira automatizada. Informações incorretas, nesse campo, acabarão por 
+                            inviabilizar o recebimento do ressarcimento pela Corregedoria-Geral da 
+                            Justiça. Deve-se sempre buscar o destinatário do ato, mesmo se foi 
+                            solicitado por um funcionário ou interposta pessoa (como um ‘office boy’, 
+                            por exemplo). Mesmo raciocínio aplica-se aos órgãos públicos, como o Poder 
+                            Judiciário, empresas públicas, sociedades de economia mista, autarquias, 
+                            e também a entes federados, como o município, o estado e a união. As 
+                            unidades jurisdicionais, secretarias de estado, entes federados e órgãos 
+                            públicos em geral deverão ser devidamente qualificados; o CNPJ a ser 
+                            informado deverá ser o da esfera do poder público solicitante, como, por 
+                            exemplo, o CNPJ do Poder Judiciário, em se tratando de unidades jurisdicionais.
+                            Segundo o Código de Normas da Corregedoria-Geral da Justiça, art. 525, §§ 1º 
+                            e 2º, é obrigatória a remessa de informações dos seguintes campos, pelo 
+                            menos: nome da pessoa, tipo da pessoa, se física ou jurídica, e tipo e 
+                            número do documento.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="processoJudicialRessarcimento" type="nsS:ProcessoJudicial" minOccurs="0"&gt;
+                    	&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;No presente campo deve ser informado o número do processo 
+                            judicial que originou o ato conforme o padrão do Conselho Nacional de Justiça: 
+                            0000000-00.0000.0.00.0000 (20 números, com ou sem pontos e traços), e o seu 
+                            tipo, que pode assumir um dos seguintes valores: “Justiça comum estadual de 
+                            primeiro grau de Santa Catarina - juízes de primeiro grau da justiça estadual 
+                            de Santa Catarina”, “Justiça comum estadual de segundo grau - Tribunal de 
+                            Justiça de Santa Catarina/TJSC”, “Outras Justiças”. Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="tipoEnteDeclaradoUtilidadePublicaEstadual" type="xs:int" minOccurs="0"&gt;
+                    	&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Para uso com o tipo de cobrança 'Isento (Lei Complementar 
+                            Estadual n. 156/97 - RCE, Art. 35, 'o' - Entidade Sem Fim Lucrativo Declarada 
+                            de Utilidade Pública Estadual)'. Opcional. A informação deve ser obtida da 
+                            tabela padronizada disponível no manual de tabelas padronizadas, item 2.30.
+                            Em caso de necessidade de cadastramento de nova entidade sem fim lucrativo 
+                            declarada de utilidade pública estadual, deve-se deduzir solicitação direcionada 
+                            ao setor de selos de fiscalização da Corregedoria-Geral da Justiça por meio da 
+                            Central de Atendimento Eletrônico, acompanhada de cópia da lei estadual que 
+                            reconheceu a condição.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;                    
+                    &lt;!-- ALTERADO 3.0 : adicionado --&gt;
+					&lt;xs:element name="copiasXerox" type="xs:int" minOccurs="0"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;No presente campo, deve-se informar o número (inteiro) 
+                            de cópias realizadas por ocasião da prática do ato objeto do envio. 
+                            Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;					
+					&lt;!-- ALTERADO 3.0 : adicionado --&gt;
+					&lt;xs:element name="microfilmagem" type="xs:int" minOccurs="0"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;No presente campo, deve-se informar o número (inteiro) de 
+                            microfilmagens realizadas por ocasião da prática do ato objeto do envio. 
+                            Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;							
+                    &lt;!-- ALTERADO 3.0 : adicionado --&gt;
+					&lt;xs:element name="digitalizacao" type="xs:int" minOccurs="0"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;No presente campo, deve-se informar o número (inteiro) de 
+                            digitalizações realizadas por ocasião da prática do ato objeto do envio. 
+                            Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;								
+                &lt;/xs:sequence&gt;
+            &lt;/xs:extension&gt;
+        &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType abstract="true" name="AtoNaoSelado" mixed="false"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Ato Não Selado define o conjunto padrão de elementos para todos os atos que não recebem selo de fiscalização.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_ATONAOSELADO" sequence-name="SEQ_ATONAOSELADO"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:complexContent mixed="false"&gt;
+            &lt;xs:extension base="nsS:Ato" /&gt;
+        &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Certidao"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Certidao define o conjunto de elementos para identificar uma certidão.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_CERTIDAO" sequence-name="SEQ_CERTIDAO"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="dataValidade" type="xs:date" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Data final de validade da certidão. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="folhasExcedentes" type="xs:int" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Número de folhas excedentes nesta certidão. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;            
+            &lt;xs:element name="localArquivamento" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Descreve o local onde os documentos de solicitação desta certidão 
+                    estão armazenados. Tamanho máximo de 200 caracteres. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="nsS:string255"&gt;
+                        &lt;xs:maxLength value="200" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;!-- ALTERADO 3.0 : adicionado. --&gt;
+			&lt;xs:element name="numeroVia"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Identifica a primeira via da certidão (certidão oriunda de 
+					ato de registro imediatamente praticado) ou a certidão de registro antigo 
+					(vulgarmente conhecida como ‘segunda via’). Aceita os valores 1 ou 2.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+				&lt;xs:simpleType&gt;
+					&lt;xs:restriction base="xs:int"&gt;
+						&lt;xs:minInclusive value="1"/&gt;
+						&lt;xs:maxInclusive value="2"/&gt;
+					&lt;/xs:restriction&gt;
+				&lt;/xs:simpleType&gt;
+			&lt;/xs:element&gt;	
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="CertidaoRC"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Certidao especializada para o Registro Civil.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="certidao" type="nsS:Certidao"&gt;
+				&lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Campo destinado às informações pertinentes a uma certidão.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="registro" type="nsS:RegistroRC"&gt;
+				&lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Campo destinado ao conjunto de elementos que identifica o registro 
+                	de um ato nos livros da serventia de registro civil.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+             
+            
+            &lt;xs:element name="observacoes" type="xs:string" minOccurs="0" maxOccurs="unbounded"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo de texto livre para as observações da certidão. 
+                    Na prática, deve-se utilizar o presente campo para a inserção do inteiro 
+                    teor do ato praticado. Apesar de opcional na modelagem, é esperado 
+                    no envio do ato. Opcional.&lt;/xs:documentation&gt;
+                    &lt;xs:appinfo&gt;
+						&lt;hj:basic&gt;
+							&lt;orm:lob/&gt;
+						&lt;/hj:basic&gt;
+					&lt;/xs:appinfo&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="CertidaoRI"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Certidao especializada para o Registro de Imóveis.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="certidao" type="nsS:Certidao"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Campo destinado às informações pertinentes a uma certidão.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="proprietario" type="nsS:PessoaResumo" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Campo para as informações do proprietário.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="conteudo" type="xs:string" minOccurs="0" maxOccurs="unbounded"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Informação requerida pelo solicitante e transcrita no corpo da 
+                    certidão. (Averbação, Registro, Inteiro Teor, outros...). Opcional.&lt;/xs:documentation&gt;
+                    &lt;xs:appinfo&gt;
+						&lt;hj:basic&gt;
+							&lt;orm:lob /&gt;
+						&lt;/hj:basic&gt;
+					&lt;/xs:appinfo&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="registro" type="nsS:Registro"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo destinado ao conjunto de elementos que identifica o 
+                    registro de um ato nos livros da serventia.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;!-- ALTERADO 3.0 : alterado tipo para long na validacao --&gt;
+            &lt;xs:element name="numeroAssento" type="xs:long"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Número da matrícula ou do registro (este último quando não 
+                    se tratar de matrícula).&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="imovel" type="nsS:Imovel"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Detalhes do imóvel.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="numeroSeloRegistroAverbacao" type="nsS:string255" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;ndicação do número de série (código) do selo de fiscalização 
+                    utilizado em todos os atos de registro e averbação que constem da 
+                    matrícula/registro. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;!-- ALTERADO 3.0 : adicionado --&gt;
+            &lt;xs:element name="matriculaNacional" type="xs:int" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Número nacional da matrícula do registro de imóveis 
+					(deve ser utilizado quando efetivamente adotado). Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Conjuge"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Dados do conjuge.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+        	&lt;xs:element name="pessoa" type="nsS:Pessoa"&gt;
+				&lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Informações pessoais do cônjuge.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;        	
+        	&lt;!-- ALTERADO 3.0 : adicionado --&gt;
+            &lt;xs:element name="filiacao" type="nsS:string255" minOccurs="1" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt; Campo destinado ao preenchimento do nome do parentesco da pessoa. 
+                	Devem ser informados tantos quantos existirem.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="nomeAdotado" type="nsS:string255" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Campo em que se espera a informação do nome alterado do cônjuge 
+                	após o casamento, caso haja alteração. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Corretor"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_CORRETOR" sequence-name="SEQ_CORRETOR" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+            &lt;xs:documentation&gt;Define o papel de corretor de imóveis.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="numeroCRECI" type="xs:int" /&gt;
+            &lt;xs:element name="nomeCorretor" type="nsS:string255" /&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Declarante"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Dados do declarante ou processo judicial.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:choice&gt;
+            &lt;xs:element name="nomeDeclarante" type="nsS:string255" /&gt;
+            &lt;xs:element name="processoJudicial" type="nsS:ProcessoJudicial" /&gt;
+        &lt;/xs:choice&gt;
+    &lt;/xs:complexType&gt;
+    &lt;!-- ALTERADO 3.0 : adicionado --&gt;
+	&lt;xs:complexType name="SeloVinculadoJuridicamente"&gt;			
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="numeroserie" type="nsS:SerieSelo" maxOccurs="1"/&gt;
+			&lt;xs:element name="tipoNegocioJuridico" type="xs:int" maxOccurs="1"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;O selo deve ser vinculado ao negócio jurídico sendo praticado.
+					O código deve estar de acordo com o manual de tabelas padrão item 2.9.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Escritura"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Define o conjunto de elementos comuns a todas as escrituras.&lt;/xs:documentation&gt;
+			&lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_ESCRITURA" sequence-name="SEQ_ESCRITURA"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;            
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="protocolo" type="nsS:Protocolo"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo destinado à informação do protocolo.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="assinadaServentia" type="xs:boolean"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo em que se espera a resposta à pergunta 
+                    “o ato foi assinado na serventia?” (sim ou não).&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;            
+            &lt;/xs:element&gt;
+            &lt;xs:element name="enderecoAssinatura" type="nsS:Endereco" minOccurs="0"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Quando a resposta à pergunta anterior for “não”, deve-se 
+                    preencher este campo com as informações completas do endereço do local da 
+                    assinatura do ato. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;  
+            &lt;xs:element name="intervenientes" type="nsS:ParteEscritura" minOccurs="0" maxOccurs="unbounded"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Nesta ocasião, espera-se sejam qualificados todos os intervenientes 
+                    envolvidos na lavratura do ato, à exceção das partes diretamente envolvidas nele 
+                    (como outorgantes e outorgados). Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;            
+            &lt;/xs:element&gt;
+            &lt;xs:element name="dispensaTestemunha" type="xs:boolean"&gt;
+	            &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo destinado à resposta da pergunta “houve dispensa de 
+                    testemunhas” (sim ou não).&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;            
+            &lt;/xs:element&gt;
+            &lt;xs:element name="testemunha" type="nsS:Pessoa" minOccurs="0" maxOccurs="unbounded"&gt;
+	            &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Quando não houver a dispensa de testemunhas, elas deverão 
+                    ser plenamente qualificadas. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;            
+            &lt;/xs:element&gt;
+            &lt;xs:element name="objetoNegocio" type="nsS:ObjetoNegocio" minOccurs="0" maxOccurs="unbounded"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Quando a escritura abordar objeto específico, independentemente 
+                    do tipo de objeto, ele deve ser devidamente qualificado, tantos quantos sejam os 
+                    objetos mencionados. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;            
+            &lt;/xs:element&gt;
+            &lt;xs:element name="valorNegocio"&gt; 
+	            &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Somatório do valor dos bens e direitos envolvidos no negócio 
+                    jurídico. Se não for o caso, deve o campo ser preenchido com "0". Campo com
+                    2 casas decimais.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="clausulaGeral" type="xs:string" minOccurs="0" maxOccurs="unbounded"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo textual livre e ilimitado destinado à inserção do inteiro 
+                    teor da escritura, destinado à correta exibição do ato na consulta pública do 
+                    Selo Digital. Opcional.&lt;/xs:documentation&gt;
+                    &lt;xs:appinfo&gt;
+						&lt;hj:basic&gt;
+							&lt;orm:lob/&gt;
+						&lt;/hj:basic&gt;
+					&lt;/xs:appinfo&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;			
+            &lt;!-- ALTERADO 3.0 : adicionado --&gt;
+			&lt;xs:element name="seloVinculadoJuridicamente"  type="nsS:SeloVinculadoJuridicamente" minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Campo destinado à informação do número de série de todos os selos 
+					vinculados utilizados no ato, que variam conforme a quantidade de negócios jurídicos 
+					nele envolvidos. Na prática, todo ato consome um selo. Ocorre que nas escrituras, 
+					dependendo do número de negócios jurídicos realizados, são utilizados mais de um selo, 
+					os quais deverão ser inseridos neste campo; São esperados o “numeroserie” no formato 
+					AAA00000 e o “tipoNegocioJuridico” que deve conter o código do negócio jurídico sendo 
+					praticado de acordo com o manual de tabelas padrão item 2.9. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;			
+			&lt;xs:element name="registro" type="nsS:Registro"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Campo destinado ao conjunto de elementos que identifica o registro 
+					de um ato nos livros da serventia.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="itbi" type="nsS:ImpostosTaxas" minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Campo destinado à informação do imposto de transmissão de bens 
+					imóveis. Permite-se a listagem de várias guias de ITBI, tantas quanto forem emitidas. 
+					A precisão destas informações é fundamental para a auditoria do sistema de inspeções 
+					virtuais. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="tipoAtoVinculado" type="xs:int" minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Em uma escritura, não é incomum que sejam realizados diversos 
+					negócios jurídicos. O tipo do ato principal já foi listado no elemento “tipoAto”, 
+					que consta da estrutura geral de todos os atos. Os atos vinculados, referentes aos 
+					demais negócios jurídicos realizados, deverão ser listados aqui, tantos quantos 
+					existirem na escritura, ocasião em que se colocará o código do tipo do ato, 
+					fornecido pelo TJSC, conforme manual de tabelas padronizadas, item 2.1. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="tipoRegistroAverbacao"  type="xs:int" minOccurs="0" &gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Código do tipo de de registro/averbação, conforme manual de 
+					tabelas padronizadas item 2.9.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Imovel"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="tipoImovel"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Define o tipo de imóvel; Campo enumerado, aceita um valores 
+                    a seguir: "Urbano" ou "Rural"&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="nsS:string255"&gt;
+                        &lt;xs:enumeration value="Urbano" /&gt;
+                        &lt;xs:enumeration value="Rural" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;!-- ALTERADO 3.0 : alterado tipo para long na validacao --&gt;
+            &lt;xs:element name="matricula" type="xs:long"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo destinado à informação da matrícula do bem. Quando não 
+                    houver, o campo deve ser preenchido com "0".&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="confrontacoes" type="xs:string"&gt;
+                &lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Devem ser informadas as confrontações do imóvel.&lt;/xs:documentation&gt;
+                    &lt;xs:appinfo&gt;
+						&lt;hj:basic&gt;
+							&lt;orm:lob /&gt;
+						&lt;/hj:basic&gt;
+					&lt;/xs:appinfo&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="endereco" type="nsS:Endereco"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Informações completas do endereço do bem.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="area"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Campo de preenchimento numérico que se destina à informação 
+                    da área do bem. Campo com 2 casas decimais.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="detalhesRural" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Preencher quando tratar-se de imóvel rural. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="ccir_incra" type="nsS:string255"&gt;
+                        	&lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Campo que se destina à informação do CCIR/Incra. 
+                                Deve conter apenas um dos atributos: itr (Informações da guia de 
+                                pagamento do Imposto Sobre a Propriedade Territorial Rural) ou 
+                                nirf (Número de Inscrição do Imóvel Rural na Secretaria da Receita 
+                                Federal). Qualquer uma das duas que estiver disponível.&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:choice&gt;
+                            &lt;xs:element name="itr" type="nsS:ImpostosTaxas"&gt;
+								&lt;xs:annotation&gt;
+									&lt;xs:documentation&gt;Informações da guia de pagamento do Imposto 
+									Sobre a Propriedade Territorial Rural&lt;/xs:documentation&gt;
+								&lt;/xs:annotation&gt;
+							&lt;/xs:element&gt;
+                            &lt;xs:element name="nirf" type="nsS:string255"&gt;
+                                &lt;xs:annotation&gt;
+                                    &lt;xs:documentation&gt;Número de Inscrição do Imóvel Rural na Secretaria 
+                                    da Receita Federal.&lt;/xs:documentation&gt;
+                                &lt;/xs:annotation&gt;
+                            &lt;/xs:element&gt;
+                        &lt;/xs:choice&gt;
+                        &lt;xs:element name="fronteira" type="xs:boolean"&gt;
+							&lt;xs:annotation&gt;
+								&lt;xs:documentation&gt;Campo destinado à reposta da pergunta 
+								“o imóvel rural se localiza em área de fronteira?” (sim ou não).&lt;/xs:documentation&gt;
+							&lt;/xs:annotation&gt;
+						&lt;/xs:element&gt;	
+                        &lt;xs:element name="mei" type="xs:int" minOccurs="0"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Quando o imóvel for adquirido por estrangeiro, deve ser 
+                                informado em campo numérico a Dimensão do Módulo de Exploração Indefinida.
+                                Opcional.&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="adquiridoPorEstrangeiro" type="xs:boolean"&gt;
+							&lt;xs:annotation&gt;
+								&lt;xs:documentation&gt;Campo destinado à reposta à pergunta “o imóvel rural 
+								foi adquirido por estrangeiro?” (sim ou não).&lt;/xs:documentation&gt;
+							&lt;/xs:annotation&gt;
+						&lt;/xs:element&gt;	
+                        &lt;xs:element name="orgaoAutorizacao" minOccurs="0" maxOccurs="2"&gt;
+							&lt;xs:annotation&gt;
+								&lt;xs:documentation&gt;Em se tratando de imóvel rural adquirido com necessidade 
+								de autorização, devem ser informados os campos “nomeOrgao”, “dataAutorizacao” 
+								e “autoridadeResponsavel”. Opcional.&lt;/xs:documentation&gt;
+							&lt;/xs:annotation&gt;
+                            &lt;xs:complexType&gt;
+                                &lt;xs:sequence&gt;
+                                    &lt;xs:element name="nomeOrgao" type="nsS:string255" /&gt;
+                                    &lt;xs:element name="dataAutorizacao" type="xs:date" /&gt;
+                                    &lt;xs:element name="autoridadeResponsavel" type="nsS:string255" /&gt;
+                                &lt;/xs:sequence&gt;
+                            &lt;/xs:complexType&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="inscricaoImobiliaria" type="nsS:string255" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;campo textual destinado à informação da inscrição imobiliária, 
+                    quando houver. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="ImpostosTaxas"&gt;
+        &lt;xs:annotation&gt;
+        	&lt;xs:documentation&gt;Define o conjunto de elementos para representar a incidência de impostos e taxas.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_IMPOSTOSTAXAS" sequence-name="SEQ_IMPOSTOSTAXAS" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="nomeImposto" type="nsS:string255" minOccurs="0" /&gt;
+            &lt;xs:element name="numeroDocumento" type="nsS:string255" /&gt;
+            &lt;xs:element name="dataPagamento" type="xs:date" /&gt;
+            &lt;xs:element name="valorPago"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;!-- ALTERADO 3.0: adicionado para validacão --&gt;
+    &lt;xs:complexType name="ImpostosTaxasMascaraBoleto"&gt;  
+    	&lt;xs:annotation&gt;
+        	&lt;xs:documentation&gt;O nossonúmero do boleto deve ser informado completo em suas 17 posições.&lt;/xs:documentation&gt;        
+        &lt;/xs:annotation&gt;      
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="nomeImposto" type="nsS:string255" minOccurs="0" /&gt;
+            &lt;xs:element name="numeroDocumento"&gt;
+            	&lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:pattern value="\d{4}\.*\d{5}\.*\d{4}\.*\d{4}" /&gt;
+                        &lt;!-- 0000.55555.4444.4444--&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;				
+            &lt;xs:element name="dataPagamento" type="xs:date" /&gt;
+            &lt;xs:element name="valorPago"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Incapacidade"&gt;
+        &lt;xs:annotation&gt;
+        	&lt;xs:documentation&gt;Define o tipo de incapacidade de uma pessoa e informações relacionadas.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_INCAPACIDADE" sequence-name="SEQ_INCAPACIDADE" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="tipoIncapacidade"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Descrição do tipo de incapacidade. Campo enumerado, aceita um 
+					dos seguintes valores: “Relativamente Incapaz” ou “Absolutamente Incapaz”.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="nsS:string255"&gt;
+                        &lt;xs:enumeration value="Relativamente Incapaz" /&gt;
+                        &lt;xs:enumeration value="Absolutamente Incapaz" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="representante" type="nsS:Pessoa"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Representante no caso de incapacidade.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="comparecimento" type="xs:boolean"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Campo em que se espera a resposta à pergunta 
+					“houve comparecimento do interveniente do incapaz na serventia?” (sim ou não).&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="autorizacaoJudicial" type="xs:boolean"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Campo em que se espera a resposta à pergunta 
+					“houve autorização judicial para a prática do ato?” (sim ou não).&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="IntimacaoAR"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Dados da intimação feita por AR.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_INTIMACAOAR" sequence-name="SEQ_INTIMACAOAR" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="dataIntimacao" type="xs:date" /&gt;
+            &lt;xs:element name="despesaAR" type="xs:double" /&gt;
+            &lt;xs:element name="motivoDevolucao" type="xs:string" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Motivo de devolução da intimação.&lt;/xs:documentation&gt;
+                    &lt;xs:appinfo&gt;
+						&lt;hj:basic&gt;
+							&lt;orm:lob /&gt;
+						&lt;/hj:basic&gt;
+					&lt;/xs:appinfo&gt;                    
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="IntimacaoEdital"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Dados da intimação feita por edital.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_INTIMACAOEDITAL" sequence-name="SEQ_INTIMACAOEDITAL" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="dataIntimacao" type="xs:date" /&gt;
+            &lt;xs:element name="despesaEdital" type="xs:double" /&gt;
+            &lt;xs:element name="despesaIntimacao" type="xs:double" /&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="IntimacaoPessoal"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Dados da intimação feita pessoalmente.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_INTIMACAOPESSOAL" sequence-name="SEQ_INTIMACAOPESSOAL" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="dataIntimacao" type="xs:date" /&gt;
+            &lt;xs:element name="despesaConducao" type="xs:double"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Valor das despesas de condução.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="despesaDiligencia" type="xs:double"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Valor das despesas de diligência.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="motivoDevolucao" type="xs:string" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Motivo de devolução da intimação.&lt;/xs:documentation&gt;
+                    &lt;xs:appinfo&gt;
+						&lt;hj:basic&gt;
+							&lt;orm:lob /&gt;
+						&lt;/hj:basic&gt;
+					&lt;/xs:appinfo&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Medico"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Define o papel de médico.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="documento" type="nsS:Documento"&gt;
+				&lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Documento do médico&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="nomeMedico" type="nsS:string255"&gt;
+				&lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Nome do médico.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="ObjetoNegocio"&gt;
+        &lt;xs:annotation&gt;
+        	&lt;xs:documentation&gt;Define o conjunto de elementos que podem compor qualquer objeto que possa 
+        	constar em um ato.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_OBJETONEGOCIO" sequence-name="SEQ_OBJETONEGOCIO" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="tipoObjeto" type="nsS:string255"&gt;            
+            	&lt;xs:annotation&gt;
+        			&lt;xs:documentation&gt;Campo de texto livre destinado à informação do tipo de objeto, 
+        			se móvel, imóvel ou semovente.&lt;/xs:documentation&gt;            
+        		&lt;/xs:annotation&gt;
+        	&lt;/xs:element&gt;
+            &lt;xs:element name="especificacao" type="xs:string"&gt;
+                &lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Breve descrição do bem. Exemplo: automóvel, terreno, apartamento, 
+                	cabeças de gado, direitos etc.&lt;/xs:documentation&gt;
+                    &lt;xs:appinfo&gt;
+						&lt;hj:basic&gt;
+							&lt;orm:lob /&gt;
+						&lt;/hj:basic&gt;
+					&lt;/xs:appinfo&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="caracteristicas" type="xs:string"&gt;
+                &lt;xs:annotation&gt;
+                	&lt;xs:documentation&gt;Descrição detalhada do bem, com caracteres que o distinga e 
+                	o individualize com precisão.&lt;/xs:documentation&gt;
+                    &lt;xs:appinfo&gt;
+						&lt;hj:basic&gt;
+							&lt;orm:lob /&gt;
+						&lt;/hj:basic&gt;
+					&lt;/xs:appinfo&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="detalhesImovel" type="nsS:Imovel" minOccurs="0"&gt;            
+            	&lt;xs:annotation&gt;
+        			&lt;xs:documentation&gt;Detalhes do imóvel.&lt;/xs:documentation&gt;            
+        		&lt;/xs:annotation&gt;
+        	&lt;/xs:element&gt;
+            &lt;xs:element name="formaPagamento" type="nsS:string255"&gt;            
+            	&lt;xs:annotation&gt;
+        			&lt;xs:documentation&gt;Forma de pagamento.&lt;/xs:documentation&gt;            
+        		&lt;/xs:annotation&gt;
+        	&lt;/xs:element&gt;
+            &lt;xs:element name="valorObjeto"&gt;
+            	&lt;xs:annotation&gt;
+        			&lt;xs:documentation&gt;Valor do objeto.&lt;/xs:documentation&gt;            
+        		&lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="ParteEscritura"&gt;
+        &lt;xs:annotation&gt;
+        	&lt;xs:documentation&gt;Define o conjunto de elementos que descrevem um participante de 
+        	uma escritura (como outorgantes e outorgados).&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_PARTEESCRITURA" sequence-name="SEQ_PARTEESCRITURA" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="parte" type="nsS:Pessoa"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Campo destinado às informações da parte.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="representantePJ" type="nsS:Pessoa" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Quando o interveniente for Pessoa Jurídica. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="procurador" type="nsS:Procurador" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Quando o interveniente for representado por procurador. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="incapacidade" type="nsS:Incapacidade" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Quando o interveniente for incapaz. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="assinanteARogo" type="nsS:Pessoa" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Quando houver interveniente assinante a rogo. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="conjuge" type="nsS:Pessoa" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Quando o interveniente for casado. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="procuradorConjuge" type="nsS:Procurador" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Quando o cônjuge do interveniente se fizer representar por 
+					procurador, são exigidas as informações de procurador. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="incapacidadeConjuge" type="nsS:Incapacidade" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Quando o cônjuge do interveniente for incapaz, são esperadas 
+					as informações de incapacidade. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="assinanteARogoConjuge" type="nsS:Pessoa" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Quando o cônjuge do interveniente for assinante a rogo, são 
+					esperadas as esperadas as informações do assinante. Opcional.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="motivoAusenciaConjuge" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Quando o interveniente for casado e não for possível a presença 
+                    do cônjuge na ocasião da lavratura do ato, deverá ser descrito o motivo da ausência. 
+                    O campo é uma enumeração e aceita um dos valores a seguir: “Estado civil da parte 
+                    é incompatível”, “Contrato de Incomunicabilidade dos bens envolvidos”, 
+                    “Pacto Antenupcial” ou “Outro”. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="nsS:string255"&gt;
+                        &lt;xs:enumeration value="Estado civil da parte é incompatível" /&gt;
+                        &lt;xs:enumeration value="Contrato de Incomunicabilidade dos bens envolvidos" /&gt;
+                        &lt;xs:enumeration value="Pacto Antenupcial" /&gt;
+                        &lt;xs:enumeration value="Outro" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="regimeBensCasamento" type="nsS:string255" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Quando o interveniente for casado, deve ser informado o regime 
+					de bens do casamento.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="ProcessoJudicial"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Dados do processo judicial.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;        
+        	&lt;xs:element name="tipoProcesso" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Tipo de processo judicial.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="nsS:string255"&gt;
+                        &lt;xs:enumeration value="Justiça comum estadual de primeiro grau de Santa Catarina - juízes de primeiro grau da justiça estadual de Santa Catarina" /&gt;
+                        &lt;xs:enumeration value="Justiça comum estadual de segundo grau - Tribunal de Justiça de Santa Catarina/TJSC" /&gt;
+                        &lt;xs:enumeration value="Outras Justiças" /&gt;                        
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="numeroProcesso" type="nsS:string255" minOccurs="0"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Número do processo judicial.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Procurador"&gt;
+        &lt;xs:annotation&gt;
+        	&lt;xs:documentation&gt;Define a pessoa que faz o papel de procurador e a procuração usada.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_PROCURADOR" sequence-name="SEQ_PROCURADOR" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="procurador" type="nsS:Pessoa"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Dados completos da pessoa.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+            &lt;xs:element name="numeroCartorioProcuracao" type="xs:int"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Número do cartório que lavrou a procuração pública.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="numeroLivroProcuracao" type="nsS:string255"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Número do livro em que foi lavrada a procuração.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="numeroFolhaProcuracao" type="xs:int"&gt;
+            	&lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Número da folha do livro em que foi lavrada a procuração&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="numeroSerieSeloProcuracao" type="nsS:string255"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Número de série do selo utilizado na procuração 
+                    (qualquer selo, e não apenas selo digital oriundo de serventias de Santa Catarina).&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Protocolo"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Protocolo define o conjunto de elementos para identificar uma entrada no 
+            livro protocolo da serventia.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_PROTOCOLO" sequence-name="SEQ_PROTOCOLO" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="codigoLivroProtocolo" type="nsS:string255"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código identificador do livro protocolo, conforme manual de 
+                    tabelas padronizadas, item 2.33, oriunda do sistema do Cadastro do Extrajudicial. 
+                    O código é obtido a partir do cadastramento do livro no sistema da Corregedoria-Geral 
+                    da Justiça - é justamente este código que deve ser utilizado nos atos. Em conclusão, 
+                    não se podem utilizar informações arbitrárias ou obtidas internamente na serventia 
+                    no presente campo.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="numeroProtocolo" type="xs:long"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Número do registro no livro protocolo.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="dataProtocolo" type="xs:date"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Data do registro no livro protocolo.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Recibo"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Recibo define o conjunto de elementos para identificar um recibo emitido.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_RECIBO" sequence-name="SEQ_RECIBO"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="numeroRecibo" type="xs:int"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Número do recibo emitido.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="dataRecibo" type="xs:date"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Data de emissão do recibo.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="valorRecibo"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Valor total de emissão do recibo. Campo com 2 casas decimais.
+                    Importante ressaltar que o valor do recibo NÃO deve ser somado no campo ‘valorAto’.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Registro"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Campo destinado ao conjunto de elementos que identifica o 
+            registro de um ato nos livros da serventia.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_REGISTRO" sequence-name="SEQ_REGISTRO" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="codigoLivro" type="xs:int"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código identificador do livro de protesto, conforme manual 
+                    de tabelas padronizadas, item 2.33, oriunda do sistema do cadastro do extrajudicial, 
+                    a partir do cadastramento do livro naquele sistema pelo próprio notário e registrador.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="paginaInicial"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Página do livro onde se inicia o registro do ato.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="nsS:string255"&gt;
+                        &lt;xs:maxLength value="10" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="paginaFinal"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Página do livro onde termina o registro do Ato.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="nsS:string255"&gt;
+                        &lt;xs:maxLength value="10" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="dataRegistro" type="xs:date"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Data em que foi feito o registro do ato no livro.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="RegistroRC"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Registro especializado para as certidões do Registro Civil.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="registro" type="nsS:Registro"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Campo destinado ao conjunto de elementos que identifica o registro 
+					de um ato nos livros da serventia.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;            
+            &lt;xs:element name="numeroAssento" type="xs:int"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Campo numérico em que deve ser inserido o número do 
+					assento da certidão.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="SeloAto"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Selo define o conjunto de elementos para identificar um selo de fiscalização.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_SELOATO" sequence-name="SEQ_SELOATO"/&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="tipoSelo" type="xs:int"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código do tipo de selo de fiscalização, conforme manual de 
+                    tabelas padronizadas, item 2.28.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="numeroSerie" type="nsS:SerieSelo"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código composto por três letras e cinco números que identifica 
+                    unicamente um selo de fiscalização&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="valorSelo"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Valor cobrado pelo selo de fiscalização. Campo com 2 casas decimais.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:decimal"&gt;
+                        &lt;xs:fractionDigits value="2" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="validador" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Código de validação composto por quatro letras ou números que deve 
+                    ser usado na consulta avançada das informações do ato. Usado somente pelo TJSC no 
+                    fornecimento dos selos. Opcional.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:pattern value="[A-Z0-9]{4}" /&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;!-- ALTERADO 3.0 : adicionado --&gt;
+        	&lt;xs:element name="nucartorio" type="xs:int" minOccurs="0"&gt;
+        		&lt;xs:annotation&gt;
+        			&lt;xs:documentation&gt;Número da serventia que detém o selo. Opcional.&lt;/xs:documentation&gt;
+        		&lt;/xs:annotation&gt;
+        	&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="Selo"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Selo define o conjunto de elementos para identificar um selo de fiscalização.&lt;/xs:documentation&gt;
+            &lt;xs:appinfo&gt;
+				&lt;hj:entity&gt;
+					&lt;orm:sequence-generator name="Generator_SELO" sequence-name="SEQ_SELO" /&gt;
+				&lt;/hj:entity&gt;
+			&lt;/xs:appinfo&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;        	
+        	&lt;xs:element name="tipoSelo" type="xs:int"&gt;
+        		&lt;xs:annotation&gt;
+        			&lt;xs:documentation&gt;Código do tipo de selo de fiscalização, conforme manual 
+                    de tabelas padronizadas item 2.28.&lt;/xs:documentation&gt;
+        		&lt;/xs:annotation&gt;
+        	&lt;/xs:element&gt;
+        	&lt;xs:element name="numeroSerie" type="nsS:SerieSelo"&gt;
+        		&lt;xs:annotation&gt;
+        			&lt;xs:documentation&gt;Código composto por três letras e cinco números que identifica 
+        			unicamente um selo de fiscalização.&lt;/xs:documentation&gt;
+        		&lt;/xs:annotation&gt;
+        	&lt;/xs:element&gt;
+        	&lt;xs:element name="valorSelo"&gt;
+        		&lt;xs:annotation&gt;
+        			&lt;xs:documentation&gt;Valor cobrado pelo selo de fiscalização.&lt;/xs:documentation&gt;
+        		&lt;/xs:annotation&gt;
+        		&lt;xs:simpleType&gt;
+        			&lt;xs:restriction base="xs:decimal"&gt;
+        				&lt;xs:fractionDigits value="2" /&gt;
+        			&lt;/xs:restriction&gt;
+        		&lt;/xs:simpleType&gt;
+        	&lt;/xs:element&gt;
+        	&lt;xs:element name="validador" minOccurs="0"&gt;
+        		&lt;xs:annotation&gt;
+        			&lt;xs:documentation&gt;Código de validação composto por quatro letras ou números a ser usado na consulta avançada das informações do ato. Usado somente pelo TJSC no fornecimento dos selos.&lt;/xs:documentation&gt;
+        		&lt;/xs:annotation&gt;
+        		&lt;xs:simpleType&gt;
+        			&lt;xs:restriction base="xs:string"&gt;
+        				&lt;xs:pattern value="[A-Z0-9]{4}" /&gt;
+        			&lt;/xs:restriction&gt;
+        		&lt;/xs:simpleType&gt;
+        	&lt;/xs:element&gt;
+        	&lt;!-- ALTERADO 3.0 : adicionado --&gt;
+        	&lt;xs:element name="nucartorio" type="xs:int" minOccurs="0" maxOccurs="1" &gt;
+        		&lt;xs:annotation&gt;
+        			&lt;xs:documentation&gt;Número da serventia dona do selo.&lt;/xs:documentation&gt;
+        		&lt;/xs:annotation&gt;
+        	&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="advogado.html">Advogado</a></li>
+                     <li><a href="apontamentoprotesto.html">ApontamentoProtesto</a></li>
+                     <li><a href="ato.html">Ato</a></li>
+                     <li><a href="atonaoselado.html">AtoNaoSelado</a></li>
+                     <li><a href="atoselado.html">AtoSelado</a></li>
+                     <li><a href="certidao1.html">Certidao</a></li>
+                     <li><a href="certidaorc.html">CertidaoRC</a></li>
+                     <li><a href="certidaori.html">CertidaoRI</a></li>
+                     <li><a href="conjuge.html">Conjuge</a></li>
+                     <li><a href="corretor.html">Corretor</a></li>
+                     <li><a href="declarante.html">Declarante</a></li>
+                     <li><a href="escritura.html">Escritura</a></li>
+                     <li><a href="imovel1.html">Imovel</a></li>
+                     <li><a href="impostostaxas.html">ImpostosTaxas</a></li>
+                     <li><a href="impostostaxasmascaraboleto.html">ImpostosTaxasMascaraBoleto</a></li>
+                     <li><a href="incapacidade.html">Incapacidade</a></li>
+                     <li><a href="intimacaoar.html">IntimacaoAR</a></li>
+                     <li><a href="intimacaoedital.html">IntimacaoEdital</a></li>
+                     <li><a href="intimacaopessoal.html">IntimacaoPessoal</a></li>
+                     <li><a href="medico.html">Medico</a></li>
+                     <li><a href="objetonegocio1.html">ObjetoNegocio</a></li>
+                     <li><a href="parteescritura.html">ParteEscritura</a></li>
+                     <li><a href="processojudicial1.html">ProcessoJudicial</a></li>
+                     <li><a href="procurador1.html">Procurador</a></li>
+                     <li><a href="protocolo2.html">Protocolo</a></li>
+                     <li><a href="recibo1.html">Recibo</a></li>
+                     <li><a href="registro4.html">Registro</a></li>
+                     <li><a href="registrorc.html">RegistroRC</a></li>
+                     <li><a href="selo1.html">Selo</a></li>
+                     <li><a href="seloato.html">SeloAto</a></li>
+                     <li><a href="selovinculadojuridicamente1.html">SeloVinculadoJuridicamente</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

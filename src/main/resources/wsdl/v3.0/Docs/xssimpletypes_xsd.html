@@ -1,0 +1,160 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs the schema xsSimpleTypes.xsd in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'xssimpletypes_xsd');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>xsSimpleTypes.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:schema targetNamespace="http://www.tjsc.jus.br/selo/XMLSchema"	 
+	xmlns:nsS="http://www.tjsc.jus.br/selo/XMLSchema"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"	 
+	xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"	 
+	xmlns:orm="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	jaxb:extensionBindingPrefixes="hj orm" 
+	jaxb:version="2.1"&gt;  
+	&lt;xs:simpleType name="MatriculaRegistro"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;número de matrícula do Registro Civil conforme padrão nacional CNJ&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:pattern value="\d{32}"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="RegimeBens"&gt;
+		&lt;xs:restriction base="nsS:string255"&gt;
+			&lt;xs:enumeration value="Comunhão Parcial"/&gt;
+			&lt;xs:enumeration value="Comunhão Universal"/&gt;
+			&lt;xs:enumeration value="Participação Final nos Aquestos"/&gt;
+			&lt;xs:enumeration value="Separação de Bens"/&gt;
+			&lt;xs:enumeration value="Não Informado"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="SerieSelo"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Código composto por três letras e cinco números que identifica unicamente um selo de fiscalização.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:pattern value="[A-Z]{3}\d{5}"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="sexo"&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="Feminino"/&gt;
+			&lt;xs:enumeration value="Masculino"/&gt;
+			&lt;xs:enumeration value="Indefinido"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="string255"&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:maxLength value="255"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="string4000"&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:maxLength value="4000"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="TipoPessoa"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Tipos de pessoa. Deve-se respeitar a acentuação e usar corretamente o charset.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="Física"/&gt;
+			&lt;xs:enumeration value="Jurídica"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="UF"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Relação das UFs brasileiras, sendo "NI" = Não informado.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="SC"/&gt;
+			&lt;xs:enumeration value="PR"/&gt;
+			&lt;xs:enumeration value="RS"/&gt;
+			&lt;xs:enumeration value="SP"/&gt;
+			&lt;xs:enumeration value="MS"/&gt;
+			&lt;xs:enumeration value="MT"/&gt;
+			&lt;xs:enumeration value="MG"/&gt;
+			&lt;xs:enumeration value="RJ"/&gt;
+			&lt;xs:enumeration value="ES"/&gt;
+			&lt;xs:enumeration value="BA"/&gt;
+			&lt;xs:enumeration value="PE"/&gt;
+			&lt;xs:enumeration value="AC"/&gt;
+			&lt;xs:enumeration value="AP"/&gt;
+			&lt;xs:enumeration value="AM"/&gt;
+			&lt;xs:enumeration value="DF"/&gt;
+			&lt;xs:enumeration value="GO"/&gt;
+			&lt;xs:enumeration value="PI"/&gt;
+			&lt;xs:enumeration value="MA"/&gt;
+			&lt;xs:enumeration value="PA"/&gt;
+			&lt;xs:enumeration value="RO"/&gt;
+			&lt;xs:enumeration value="RR"/&gt;
+			&lt;xs:enumeration value="TO"/&gt;
+			&lt;xs:enumeration value="AL"/&gt;
+			&lt;xs:enumeration value="CE"/&gt;
+			&lt;xs:enumeration value="PB"/&gt;
+			&lt;xs:enumeration value="RN"/&gt;
+			&lt;xs:enumeration value="SE"/&gt;
+			&lt;xs:enumeration value="NI"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+&lt;/xs:schema&gt;
+</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="SimpleType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>SimpleTypes:</b></td>
+            </tr>
+            <tr id="SimpleType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="matricularegistro.html">MatriculaRegistro</a></li>
+                     <li><a href="regimebens.html">RegimeBens</a></li>
+                     <li><a href="serieselo.html">SerieSelo</a></li>
+                     <li><a href="tipopessoa2.html">TipoPessoa</a></li>
+                     <li><a href="uf1.html">UF</a></li>
+                     <li><a href="sexo2.html">sexo</a></li>
+                     <li><a href="string255.html">string255</a></li>
+                     <li><a href="string4000.html">string4000</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

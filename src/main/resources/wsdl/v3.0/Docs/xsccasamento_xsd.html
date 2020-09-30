@@ -1,0 +1,149 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs the schema xsCCasamento.xsd in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'xsccasamento_xsd');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>xsCCasamento.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;xs:schema xmlns:nsS="http://www.tjsc.jus.br/selo/XMLSchema"
+           targetNamespace="http://www.tjsc.jus.br/selo/XMLSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;xs:include schemaLocation="../Comum/xsComum.xsd" /&gt;
+    &lt;xs:complexType mixed="false" name="CCasamento"&gt;
+        &lt;xs:complexContent mixed="false"&gt;
+            &lt;xs:extension base="nsS:AtoSelado"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="certidaoRC" type="nsS:CertidaoRC"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo obrigatório destinado às informações da certidão 
+                            com campos específicos para o registro civil.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;                    
+                    &lt;!-- ALTERADO 3.0 : adicionado --&gt;
+                    &lt;xs:element name="conjuge" type="nsS:Conjuge" minOccurs="2" maxOccurs="unbounded"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Dados do cônjuge. Devem ser informados pelo menos 2. 
+                            Contudo, o campo admite sejam inseridos tantos quantos existirem.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="regimeBens" type="nsS:RegimeBens"&gt;
+						&lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo de texto destinado à informação do regime patrimonial 
+                            de bens adotado, dentre as opções “comunhão parcial”, “comunhão universal”, 
+                            “participação final nos aquestos”, “separação de bens” e “não informado”.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="cpfJuizdePaz"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo de texto destinado à informação do número do CPF do 
+                            Juiz de Paz que realizou a cerimônia do casamento, disponível no cadastro de 
+                            Juízes de Paz conforme manual de tabelas padronizadas, item 2.31.
+                            Caso inexistente, no assento, o número do CPF do Juiz de Paz, deve-se preencher 
+                            o campo com onze zeros (00000000000), e, no campo observações, deve-se incluir 
+                            a informação de que o assento não apresenta o CPF do Juiz de Paz.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                        &lt;xs:simpleType&gt;
+                            &lt;xs:restriction base="nsS:string255"&gt;
+                                &lt;xs:pattern value="\d{11}" /&gt;
+                            &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="perimetroUrbano" type="xs:boolean"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo que espera a resposta à pergunta “O casamento foi 
+                            realizado dentro do perímetro urbano?” (sim ou não), para fins de ressarcimento.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;!-- ALTERADO 3.0 : tornado obrigatório --&gt;
+                    &lt;xs:element name="dentroServentia" type="xs:boolean"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo que espera a resposta à pergunta “O casamento foi 
+                            realizado dentro da serventia?” (sim ou não), para fins de ressarcimento.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;!-- ALTERADO 3.0 : tornado obrigatório --&gt;
+                    &lt;xs:element name="dentroExpediente" type="xs:boolean"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo que espera a resposta à pergunta “O casamento foi 
+                            realizado dentro do horário do expediente?” (sim ou não), para fins de ressarcimento.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="seloHabilitacao" type="nsS:SerieSelo"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo destinado à informação número de série (código) do selo 
+                            empregado na Certidão de Habilitação para Casamento, no padrão AAA00000. Caso 
+                            se trate de habilitação levada a efeito por serventia de outro estado que não 
+                            utilize selo de fiscalização ou adote outro padrão de numeração, deve-se 
+                            preencher o campo com a expressão “AAA00000”.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="matricula" type="nsS:MatriculaRegistro"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Número de matrícula obtido pelo casamento de acordo com o 
+                            padrão nacional de matrícula estabelecido pelo Conselho Nacional de Justiça.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;!-- ALTERADO 3.0 : tornado obrigatório --&gt;
+                    &lt;xs:element name="casamentoColetivo" type="xs:boolean"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo que espera a resposta à pergunta “O casamento foi 
+                            coletivo?” (sim ou não), entende-se singular, caso contrário.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:extension&gt;
+        &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="ccasamento.html">CCasamento</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

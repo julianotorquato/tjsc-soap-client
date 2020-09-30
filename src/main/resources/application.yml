@@ -1,0 +1,9 @@
+
+# ===================================================================
+# Application specific properties
+# ===================================================================
+
+application:
+  tjsc-webservice-uri: https://selo.tjsc.jus.br/SeloService30Teste
+  username: cartorio
+  password: selodigital

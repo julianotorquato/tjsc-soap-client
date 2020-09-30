@@ -1,0 +1,292 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item Imovel in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'imovel1');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>Imovel</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xscomum_xsd.html">xsComum.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="176,396,436,466" href="inscricaoimobiliaria.html" alt="Drilldown into inscricaoImobiliaria"></area>
+                     <area shape="rect" coords="176,344,403,389" href="detalhesrural.html" alt="Drilldown into detalhesRural"></area>
+                     <area shape="rect" coords="156,266,427,336" href="area.html" alt="Drilldown into area"></area>
+                     <area shape="rect" coords="156,214,348,259" href="endereco.html" alt="Drilldown into endereco"></area>
+                     <area shape="rect" coords="156,162,373,207" href="confrontacoes.html" alt="Drilldown into confrontacoes"></area>
+                     <area shape="rect" coords="156,100,432,155" href="matricula.html" alt="Drilldown into matricula"></area>
+                     <area shape="rect" coords="156,1,417,93" href="tipoimovel.html" alt="Drilldown into tipoImovel"></area></map><img src="images/imovel1.png" border="0" alt="XSD Diagram of Imovel" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="Imovel"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="tipoImovel"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Define o tipo de imóvel; Campo enumerado, aceita um valores 
+                    a seguir: "Urbano" ou "Rural"&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="nsS:string255"&gt;
+                    &lt;xs:enumeration value="Urbano" /&gt;
+                    &lt;xs:enumeration value="Rural" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:element&gt;
+        &lt;!-- ALTERADO 3.0 : alterado tipo para long na validacao --&gt;
+        &lt;xs:element name="matricula" type="xs:long"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Campo destinado à informação da matrícula do bem. Quando não 
+                    houver, o campo deve ser preenchido com "0".&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="confrontacoes" type="xs:string"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Devem ser informadas as confrontações do imóvel.&lt;/xs:documentation&gt;
+                &lt;xs:appinfo&gt;
+                    &lt;hj:basic xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"&gt;
+                        &lt;orm:lob xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" /&gt;
+                    &lt;/hj:basic&gt;
+                &lt;/xs:appinfo&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="endereco" type="nsS:Endereco"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Informações completas do endereço do bem.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="area"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Campo de preenchimento numérico que se destina à informação 
+                    da área do bem. Campo com 2 casas decimais.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:decimal"&gt;
+                    &lt;xs:fractionDigits value="2" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="detalhesRural" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Preencher quando tratar-se de imóvel rural. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:complexType&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="ccir_incra" type="nsS:string255"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo que se destina à informação do CCIR/Incra. 
+                                Deve conter apenas um dos atributos: itr (Informações da guia de 
+                                pagamento do Imposto Sobre a Propriedade Territorial Rural) ou 
+                                nirf (Número de Inscrição do Imóvel Rural na Secretaria da Receita 
+                                Federal). Qualquer uma das duas que estiver disponível.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:choice&gt;
+                        &lt;xs:element name="itr" type="nsS:ImpostosTaxas"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Informações da guia de pagamento do Imposto 
+									Sobre a Propriedade Territorial Rural&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="nirf" type="nsS:string255"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Número de Inscrição do Imóvel Rural na Secretaria 
+                                    da Receita Federal.&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:choice&gt;
+                    &lt;xs:element name="fronteira" type="xs:boolean"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo destinado à reposta da pergunta 
+								“o imóvel rural se localiza em área de fronteira?” (sim ou não).&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="mei" type="xs:int" minOccurs="0"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Quando o imóvel for adquirido por estrangeiro, deve ser 
+                                informado em campo numérico a Dimensão do Módulo de Exploração Indefinida.
+                                Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="adquiridoPorEstrangeiro" type="xs:boolean"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo destinado à reposta à pergunta “o imóvel rural 
+								foi adquirido por estrangeiro?” (sim ou não).&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="orgaoAutorizacao" minOccurs="0" maxOccurs="2"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Em se tratando de imóvel rural adquirido com necessidade 
+								de autorização, devem ser informados os campos “nomeOrgao”, “dataAutorizacao” 
+								e “autoridadeResponsavel”. Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                        &lt;xs:complexType&gt;
+                            &lt;xs:sequence&gt;
+                                &lt;xs:element name="nomeOrgao" type="nsS:string255" /&gt;
+                                &lt;xs:element name="dataAutorizacao" type="xs:date" /&gt;
+                                &lt;xs:element name="autoridadeResponsavel" type="nsS:string255" /&gt;
+                            &lt;/xs:sequence&gt;
+                        &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="inscricaoImobiliaria" type="nsS:string255" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;campo textual destinado à informação da inscrição imobiliária, 
+                    quando houver. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tipoImovel</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tipoimovel.html">tipoImovel</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">matricula</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="matricula.html">matricula</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">confrontacoes</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="confrontacoes.html">confrontacoes</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">endereco</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="endereco.html">endereco</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">area</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="area.html">area</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">detalhesRural</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="detalhesrural.html">detalhesRural</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">inscricaoImobiliaria</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="inscricaoimobiliaria.html">inscricaoImobiliaria</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>Imovel</i></b></li>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="imovel.html">imovel</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="detalhesimovel.html">detalhesImovel</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="imovel2.html">imovel</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="imovel3.html">imovel</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="detalhesimovel.html">detalhesImovel</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="imovel.html">imovel</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="imovel2.html">imovel</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="imovel3.html">imovel</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item dadosObito in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Element', 'dadosobito');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>Element</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>dadosObito</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xseinventariopartilha_xsd.html">xsEInventarioPartilha.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>MinOccurs</b></td>
+               <td>(1)</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>MaxOccurs</b></td>
+               <td>(1)</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Neste campo, deverão ser informados a 
+“data do óbito”, “local do óbito” (endereço completo do 
+local do óbito), ou quando indisponível a informação, o 
+“local aproximado do óbito” (campo descritivo do local 
+aproximado), e “seloCertidaoObito” (campo de texto livre 
+para inserção do selo da certidão de óbito, não 
+necessariamente selo oriundo do sistema do Selo Digital 
+de Santa Catarina – quando inexistir selo na certidão 
+oriunda de Estado que não o utilize, preencher o campo 
+com “Não se aplica”).</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="310,163,549,273" href="selocertidaoobito.html" alt="Drilldown into seloCertidaoObito"></area>
+                     <area shape="rect" coords="355,84,589,154" href="localobitoaproximado.html" alt="Drilldown into localObitoAproximado"></area>
+                     <area shape="rect" coords="355,52,511,77" href="localobito.html" alt="Drilldown into localObito"></area>
+                     <area shape="rect" coords="310,1,458,45" href="dataobito.html" alt="Drilldown into dataObito"></area></map><img src="images/dadosobito.png" border="0" alt="XSD Diagram of dadosObito" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:element name="dadosObito"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Neste campo, deverão ser informados a 
+												“data do óbito”, “local do óbito” (endereço completo do 
+												local do óbito), ou quando indisponível a informação, o 
+												“local aproximado do óbito” (campo descritivo do local 
+												aproximado), e “seloCertidaoObito” (campo de texto livre 
+												para inserção do selo da certidão de óbito, não 
+												necessariamente selo oriundo do sistema do Selo Digital 
+												de Santa Catarina – quando inexistir selo na certidão 
+												oriunda de Estado que não o utilize, preencher o campo 
+												com “Não se aplica”).&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="dataObito" type="xs:date"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Data do óbito&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:choice&gt;
+                &lt;xs:element name="localObito" type="nsS:Endereco" /&gt;
+                &lt;xs:element name="localObitoAproximado"&gt;
+                    &lt;xs:annotation&gt;
+                        &lt;xs:documentation&gt;Informar local aproximado, 
+																quando no local de óbito não houver endereço.&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                    &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="nsS:string4000" /&gt;
+                    &lt;/xs:simpleType&gt;
+                &lt;/xs:element&gt;
+            &lt;/xs:choice&gt;
+            &lt;xs:element name="seloCertidaoObito" type="nsS:string255"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;campo de texto livre 
+															para inserção do selo da certidão de óbito, não 
+															necessariamente selo oriundo do sistema do Selo Digital 
+															de Santa Catarina – quando inexistir selo na certidão 
+															oriunda de Estado que não o utilize, preencher o campo 
+															com “Não se aplica”.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dataObito</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="dataobito.html">dataObito</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">localObito</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="localobito.html">localObito</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">localObitoAproximado</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="localobitoaproximado.html">localObitoAproximado</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">seloCertidaoObito</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="selocertidaoobito.html">seloCertidaoObito</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

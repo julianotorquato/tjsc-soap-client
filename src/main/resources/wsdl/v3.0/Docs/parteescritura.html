@@ -1,0 +1,344 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item ParteEscritura in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'parteescritura');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>ParteEscritura</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xscomum_xsd.html">xsComum.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Define o conjunto de elementos que descrevem um participante de 
+uma escritura (como outorgantes e outorgados).</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="370,673,640,743" href="regimebenscasamento.html" alt="Drilldown into regimeBensCasamento"></area>
+                     <area shape="rect" coords="370,501,668,665" href="motivoausenciaconjuge.html" alt="Drilldown into motivoAusenciaConjuge"></area>
+                     <area shape="rect" coords="370,438,641,493" href="assinantearogoconjuge.html" alt="Drilldown into assinanteARogoConjuge"></area>
+                     <area shape="rect" coords="370,376,633,431" href="incapacidadeconjuge.html" alt="Drilldown into incapacidadeConjuge"></area>
+                     <area shape="rect" coords="370,314,646,369" href="procuradorconjuge.html" alt="Drilldown into procuradorConjuge"></area>
+                     <area shape="rect" coords="370,262,563,307" href="conjuge1.html" alt="Drilldown into conjuge"></area>
+                     <area shape="rect" coords="370,209,610,254" href="assinantearogo.html" alt="Drilldown into assinanteARogo"></area>
+                     <area shape="rect" coords="370,157,565,202" href="incapacidade1.html" alt="Drilldown into incapacidade"></area>
+                     <area shape="rect" coords="370,105,649,150" href="procurador.html" alt="Drilldown into procurador"></area>
+                     <area shape="rect" coords="370,53,598,98" href="representantepj.html" alt="Drilldown into representantePJ"></area>
+                     <area shape="rect" coords="350,1,534,46" href="parte.html" alt="Drilldown into parte"></area></map><img src="images/parteescritura.png" border="0" alt="XSD Diagram of ParteEscritura" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="ParteEscritura"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Define o conjunto de elementos que descrevem um participante de 
+        	uma escritura (como outorgantes e outorgados).&lt;/xs:documentation&gt;
+        &lt;xs:appinfo&gt;
+            &lt;hj:entity xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"&gt;
+                &lt;orm:sequence-generator name="Generator_PARTEESCRITURA" sequence-name="SEQ_PARTEESCRITURA" xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" /&gt;
+            &lt;/hj:entity&gt;
+        &lt;/xs:appinfo&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="parte" type="nsS:Pessoa"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Campo destinado às informações da parte.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="representantePJ" type="nsS:Pessoa" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando o interveniente for Pessoa Jurídica. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="procurador" type="nsS:Procurador" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando o interveniente for representado por procurador. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="incapacidade" type="nsS:Incapacidade" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando o interveniente for incapaz. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="assinanteARogo" type="nsS:Pessoa" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando houver interveniente assinante a rogo. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="conjuge" type="nsS:Pessoa" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando o interveniente for casado. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="procuradorConjuge" type="nsS:Procurador" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando o cônjuge do interveniente se fizer representar por 
+					procurador, são exigidas as informações de procurador. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="incapacidadeConjuge" type="nsS:Incapacidade" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando o cônjuge do interveniente for incapaz, são esperadas 
+					as informações de incapacidade. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="assinanteARogoConjuge" type="nsS:Pessoa" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando o cônjuge do interveniente for assinante a rogo, são 
+					esperadas as esperadas as informações do assinante. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="motivoAusenciaConjuge" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando o interveniente for casado e não for possível a presença 
+                    do cônjuge na ocasião da lavratura do ato, deverá ser descrito o motivo da ausência. 
+                    O campo é uma enumeração e aceita um dos valores a seguir: “Estado civil da parte 
+                    é incompatível”, “Contrato de Incomunicabilidade dos bens envolvidos”, 
+                    “Pacto Antenupcial” ou “Outro”. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="nsS:string255"&gt;
+                    &lt;xs:enumeration value="Estado civil da parte é incompatível" /&gt;
+                    &lt;xs:enumeration value="Contrato de Incomunicabilidade dos bens envolvidos" /&gt;
+                    &lt;xs:enumeration value="Pacto Antenupcial" /&gt;
+                    &lt;xs:enumeration value="Outro" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="regimeBensCasamento" type="nsS:string255" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Quando o interveniente for casado, deve ser informado o regime 
+					de bens do casamento.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">parte</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="parte.html">parte</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">representantePJ</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="representantepj.html">representantePJ</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">procurador</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="procurador.html">procurador</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">incapacidade</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="incapacidade1.html">incapacidade</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">assinanteARogo</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="assinantearogo.html">assinanteARogo</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">conjuge</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="conjuge1.html">conjuge</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">procuradorConjuge</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="procuradorconjuge.html">procuradorConjuge</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">incapacidadeConjuge</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="incapacidadeconjuge.html">incapacidadeConjuge</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">assinanteARogoConjuge</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="assinantearogoconjuge.html">assinanteARogoConjuge</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">motivoAusenciaConjuge</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="motivoausenciaconjuge.html">motivoAusenciaConjuge</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">regimeBensCasamento</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="regimebenscasamento.html">regimeBensCasamento</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>ParteEscritura</i></b></li>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="intervenientes.html">intervenientes</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="partes1.html">partes</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="partes2.html">partes</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="parte3.html">parte</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgado.html">outorgado</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgante.html">outorgante</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="declarante1.html">declarante</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="emancipado1.html">emancipado</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="filiacao6.html">filiacao</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tutor.html">tutor</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="decujus1.html">deCujus</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="herdeiro.html">herdeiro</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="nubente.html">nubente</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgado1.html">outorgado</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgante1.html">outorgante</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgado2.html">outorgado</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgante2.html">outorgante</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgado3.html">outorgado</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgante3.html">outorgante</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="testador.html">testador</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="testamenteiro.html">testamenteiro</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="convivente.html">convivente</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="convivente.html">convivente</a><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="declarante1.html">declarante</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="decujus1.html">deCujus</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="emancipado1.html">emancipado</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="filiacao6.html">filiacao</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="herdeiro.html">herdeiro</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="intervenientes.html">intervenientes</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="nubente.html">nubente</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgado.html">outorgado</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgado1.html">outorgado</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgado2.html">outorgado</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgado3.html">outorgado</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgante.html">outorgante</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgante1.html">outorgante</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgante2.html">outorgante</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="outorgante3.html">outorgante</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="parte3.html">parte</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="partes1.html">partes</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="partes2.html">partes</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="testador.html">testador</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="testamenteiro.html">testamenteiro</a>, <a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tutor.html">tutor</a>, 
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

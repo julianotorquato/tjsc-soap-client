@@ -1,0 +1,22 @@
+
+Url que contém as entradas e saídas dos serviços webservice
+http://selo.tjsc.jus.br/SeloService30Teste?wsdl
+
+
+Página 20 documentação das rotas técnicas.
+http://selo.tjsc.jus.br/XMLSchema/v3.0/interoperabilidade_sd_3.0.pdf
+
+
+Exemplo do selo versão 3
+http://selo.tjsc.jus.br/XMLSchema/v0.3/Exemplos/ExemploSelos.xml
+
+
+ sudo apt install openjdk-8-jdk-headless
+
+cd src/main/java
+
+wsimport -keep -verbose http://selo.tjsc.jus.br/SeloService30Teste?wsdl
+
+cd /br/jus/tjsc/selo
+
+rm *.class

@@ -1,0 +1,414 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item TituloCredito in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'titulocredito1');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>TituloCredito</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="xstitulocredito_xsd.html">xsTituloCredito.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Define o conjunto de informações que compõem os títulos de crédito.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="378,1322,573,1377" href="avalista.html" alt="Drilldown into avalista"></area>
+                     <area shape="rect" coords="378,1259,621,1314" href="devedorsolidario.html" alt="Drilldown into devedorSolidario"></area>
+                     <area shape="rect" coords="360,1207,502,1251" href="devedor.html" alt="Drilldown into devedor"></area>
+                     <area shape="rect" coords="378,1155,558,1199" href="credor.html" alt="Drilldown into credor"></area>
+                     <area shape="rect" coords="380,1093,653,1148" href="datadistribuicao.html" alt="Drilldown into dataDistribuicao"></area>
+                     <area shape="rect" coords="380,1010,669,1085" href="protocolodistribuicao.html" alt="Drilldown into protocoloDistribuicao"></area>
+                     <area shape="rect" coords="380,948,612,1003" href="tituloaceito.html" alt="Drilldown into tituloAceito"></area>
+                     <area shape="rect" coords="380,886,631,941" href="situacaotitulo.html" alt="Drilldown into situacaoTitulo"></area>
+                     <area shape="rect" coords="360,823,617,878" href="formapagamento1.html" alt="Drilldown into formaPagamento"></area>
+                     <area shape="rect" coords="360,761,599,816" href="moeda.html" alt="Drilldown into moeda"></area>
+                     <area shape="rect" coords="360,699,605,754" href="tipoendosso.html" alt="Drilldown into tipoEndosso"></area>
+                     <area shape="rect" coords="360,636,622,691" href="pracapagamento.html" alt="Drilldown into pracaPagamento"></area>
+                     <area shape="rect" coords="360,539,661,629" href="valorprotestado.html" alt="Drilldown into valorProtestado"></area>
+                     <area shape="rect" coords="360,472,622,532" href="valortitulo.html" alt="Drilldown into valorTitulo"></area>
+                     <area shape="rect" coords="360,420,543,464" href="datavencimento.html" alt="Drilldown into dataVencimento"></area>
+                     <area shape="rect" coords="360,368,526,412" href="dataemissao1.html" alt="Drilldown into dataEmissao"></area>
+                     <area shape="rect" coords="360,291,627,361" href="nossonumero.html" alt="Drilldown into nossoNumero"></area>
+                     <area shape="rect" coords="360,192,665,283" href="codigobanco.html" alt="Drilldown into codigoBanco"></area>
+                     <area shape="rect" coords="360,125,532,185" href="numerotitulo.html" alt="Drilldown into numeroTitulo"></area>
+                     <area shape="rect" coords="360,63,619,118" href="tipotitulo.html" alt="Drilldown into tipoTitulo"></area>
+                     <area shape="rect" coords="360,1,607,56" href="codigotitulo.html" alt="Drilldown into codigoTitulo"></area></map><img src="images/titulocredito1.png" border="0" alt="XSD Diagram of TituloCredito" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="TituloCredito"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Define o conjunto de informações que compõem os títulos de crédito.&lt;/xs:documentation&gt;
+        &lt;xs:appinfo&gt;
+            &lt;hj:entity xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"&gt;
+                &lt;orm:sequence-generator name="Generator_TITULOCREDITO" sequence-name="SEQ_TITULOCREDITO" xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" /&gt;
+            &lt;/hj:entity&gt;
+        &lt;/xs:appinfo&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="codigoTitulo" type="xs:int"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código do título adotado pela serventia (por ex. 1- cheque, 
+					2-duplicata etc.).&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="tipoTitulo" type="xs:int"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código do tipo de título (espécie), conforme conforme manual 
+					de tabelas padronizadas item 2.26.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="numeroTitulo" type="nsS:string255"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Número estampado no título de crédito.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="codigoBanco"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código FEBRABAN do banco apresentante, conforme manual de tabelas
+					padronizadas item 2.10. Em caso de título não vinculado a banco, deve-se informar "0".&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="nsS:string255"&gt;
+                    &lt;xs:length value="3" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="nossoNumero" type="nsS:string255"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Informação constante do título de crédito. Em caso de título não 
+					vinculado ao banco, preencher com “não informado”;&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="dataEmissao" type="xs:date"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Data de emissão do título.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="dataVencimento" type="xs:date"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Data de vencimento do título.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="valorTitulo"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Valor total estampado no título. Campo com 2 casas decimais.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:decimal"&gt;
+                    &lt;xs:fractionDigits value="2" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="valorProtestado"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;A despeito do valor do título, deve-se informar o valor 
+					efetivamente protestado (ex. parcelas vencidas de um contrato). Campo com 2 
+					casas decimais.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:decimal"&gt;
+                    &lt;xs:fractionDigits value="2" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="pracaPagamento" type="xs:int"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código da praça de pagamento do título (município), conforme 
+					manual de tabelas padronizadas item 2.13.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="tipoEndosso" type="xs:int"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código do tipo de endosso, conforme manual de tabelas 
+					padronizadas item 2.5. Caso não haja, preencher com "0".&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="moeda" type="xs:int"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código da moeda do título, conforme  manual de tabelas
+					padronizadas item 2.19&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="formaPagamento" type="xs:int"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Código da forma de pagamento, conforme manual de tabelas
+					padronizadas item 2.27.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="situacaoTitulo" type="xs:int" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Indicador da situação do título, conforme manual de tabelas 
+					padronizadas item 2.25. Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="tituloAceito" type="xs:boolean" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Resposta a pergunta "O título foi aceito?" (sim ou não). 
+					Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="protocoloDistribuicao" type="xs:int" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Número do protocolo de distribuição do título, informado pelo 
+					próprio serviço de distribuição - obrigatório para as comarcas em que haja 
+					distribuição. Caso contrário é opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="dataDistribuicao" type="xs:date" minOccurs="0"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Data da distribuição do título - obrigatório apenas para 
+					as comarcas em que haja distribuição. Caso contrário é opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="credor" type="nsS:PessoaResumo" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Informações do credor.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="devedor" type="nsS:Pessoa"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Informações do devedor.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="devedorSolidario" type="nsS:Pessoa" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Qualificação de todos os devedores solidários, se houver.
+					Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="avalista" type="nsS:Pessoa" minOccurs="0" maxOccurs="unbounded"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Qualificação de todos os avalistas, se houver. 
+					Opcional.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">codigoTitulo</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="codigotitulo.html">codigoTitulo</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tipoTitulo</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tipotitulo.html">tipoTitulo</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">numeroTitulo</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="numerotitulo.html">numeroTitulo</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">codigoBanco</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="codigobanco.html">codigoBanco</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">nossoNumero</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="nossonumero.html">nossoNumero</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dataEmissao</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="dataemissao1.html">dataEmissao</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dataVencimento</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="datavencimento.html">dataVencimento</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">valorTitulo</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="valortitulo.html">valorTitulo</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">valorProtestado</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="valorprotestado.html">valorProtestado</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">pracaPagamento</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="pracapagamento.html">pracaPagamento</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tipoEndosso</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tipoendosso.html">tipoEndosso</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">moeda</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="moeda.html">moeda</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">formaPagamento</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="formapagamento1.html">formaPagamento</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">situacaoTitulo</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="situacaotitulo.html">situacaoTitulo</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">tituloAceito</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="tituloaceito.html">tituloAceito</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">protocoloDistribuicao</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="protocolodistribuicao.html">protocoloDistribuicao</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">dataDistribuicao</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="datadistribuicao.html">dataDistribuicao</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">credor</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="credor.html">credor</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">devedor</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="devedor.html">devedor</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">devedorSolidario</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="devedorsolidario.html">devedorSolidario</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">avalista</td>
+                        <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="avalista.html">avalista</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>TituloCredito</i></b></li>
+                     <ul>
+                        <li><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="titulocredito.html">tituloCredito</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">nsS</a>:<a href="titulocredito.html">tituloCredito</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>

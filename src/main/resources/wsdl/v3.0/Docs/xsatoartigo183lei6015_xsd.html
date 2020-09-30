@@ -1,0 +1,169 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs the schema xsAtoArtigo183Lei6015.xsd in Selo Digital de Fiscalização v3.0</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'xsatoartigo183lei6015_xsd');
+                        --></script><div class="pageheader">
+         Documentation for Selo Digital de Fiscalização v3.0
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>xsAtoArtigo183Lei6015.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___www_tjsc_jus_br_selo_xmlschema.html">http://www.tjsc.jus.br/selo/XMLSchema</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;xs:schema xmlns:hj="http://hyperjaxb3.jvnet.org/ejb/schemas/customizations"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:orm="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:nsS="http://www.tjsc.jus.br/selo/XMLSchema"
+	jaxb:extensionBindingPrefixes="hj orm"
+	jaxb:version="2.1"
+	targetNamespace="http://www.tjsc.jus.br/selo/XMLSchema"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;xs:include schemaLocation="../Comum/xsComum.xsd" /&gt;
+    &lt;xs:complexType name="AtoArtigo183Lei6015" mixed="false"&gt;
+        &lt;xs:complexContent mixed="false"&gt;
+            &lt;xs:extension base="nsS:AtoSelado"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="tipoFato" type="xs:string"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Descrição do ato praticado, que deve incluir todas as informações 
+                            textuais nele inseridas. Na prática, funciona como campo destinado ao inteiro 
+                            teor do ato de registro/averbação praticado.&lt;/xs:documentation&gt;
+                            &lt;xs:appinfo&gt;
+								&lt;hj:basic&gt;
+									&lt;orm:lob /&gt;
+								&lt;/hj:basic&gt;
+							&lt;/xs:appinfo&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:choice&gt;
+                        &lt;xs:element name="IDRegistro" type="nsS:string255"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Destinado à informação da identificação do ato de registro.&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="IDAverbacao" type="nsS:string255"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Identificação da averbação.&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:choice&gt;
+                    &lt;xs:element name="tipoRegistroAverbacao" type="xs:int"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Destinado ao preenchimento do código do ato de registro/averbação 
+                            praticado, conforme manual de tabelas padronizadas, item 2.9. A tabela contém a 
+                            listagem dos típicos atos de registro/averbação de que trata a Lei dos Registros 
+                            Públicos e os demais normativos sobre a matéria.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="protocolo" type="nsS:Protocolo"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo destinado à informação do protocolo.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="registro" type="nsS:Registro"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo destinado ao conjunto de elementos que 
+                            identifica o registro de um ato nos livros da serventia. &lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="numeroAssento" type="nsS:string255"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Número da matrícula ou do registro (este último quando 
+                            não se tratar de matrícula).&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="numeroSeloEscritura" type="nsS:string255" minOccurs="0"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Número de série do selo utilizado na escritura 
+                            (referente ao imóvel de que trata o registro), quando houver (qualquer selo, 
+                            não apenas selo digital oriundo de serventias de Santa Catarina). Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="partes" type="nsS:ParteEscritura" maxOccurs="unbounded"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Nesta estrutura, esperam-se as informações de todas as pessoas. 
+                            Devem ser relacionados tantos quanto forem os envolvidos.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="imovel" type="nsS:Imovel" minOccurs="0"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Campo para as informações do imóvel.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="valorObjeto" minOccurs="0"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Valor do objeto para atos praticados no registro auxiliar, 
+                            que não se refiram a imóvel (o valor do imóvel encontra-se na estrutura “imovel”, 
+                            acima). Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                        &lt;xs:simpleType&gt;
+                            &lt;xs:restriction base="xs:decimal"&gt;
+                                &lt;xs:fractionDigits value="2" /&gt;
+                            &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="numeroUnidadesAutonomas" type="xs:int" minOccurs="0"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Número de unidades autônomas. Somente para o registro de 
+                            incorporação, loteamento e desmembramento. Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                    &lt;!-- ALTERADO 3.0 : adicionado --&gt;
+                    &lt;xs:element name="matriculaNacional" type="xs:int" minOccurs="0"&gt;
+                        &lt;xs:annotation&gt;
+                            &lt;xs:documentation&gt;Número nacional da matrícula do registro de imóveis 
+                            (deve ser utilizado quando efetivamente adotado). Opcional.&lt;/xs:documentation&gt;
+                        &lt;/xs:annotation&gt;
+                    &lt;/xs:element&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:extension&gt;
+        &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="atoartigo183lei6015.html">AtoArtigo183Lei6015</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Selo Digital de Fiscalização v3.0<br/>
+          
+         </div>
+   </body>
+</html>
